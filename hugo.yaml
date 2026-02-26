@@ -1,0 +1,94 @@
+baseURL: "https://cuiliang.ai/"
+languageCode: "en"
+title: "CuiLiang.ai"
+theme: "PaperMod"
+hasCJKLanguage: true
+paginate: 10
+enableEmoji: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production
+  title: "CuiLiang.ai"
+  description: "AI Agent Engineering in Practice"
+  keywords: [AI Agent, CUA, MCP, LLM, Computer Use Agent]
+  author: "LiangShu"
+  defaultTheme: auto
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+
+  homeInfoParams:
+    Title: "CuiLiang.ai"
+    Content: |
+      AI Agent Engineering in Practice
+      <br><br>
+      - Principal Software Manager @ Microsoft
+      - Former Senior Staff Engineer @ Alibaba Cloud · 10+ Years in Distributed Systems
+      <br><br>
+      - Background in Big Data Architecture & Data Integration
+      - Now focused on Computer Use Agent / MCP / Multi-Agent Orchestration
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/your-github-username"
+    - name: rss
+      url: "/index.xml"
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+  cover:
+    linkFullImages: true
+    responsiveImages: true
+
+menu:
+  main:
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 1
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 2
+    - identifier: archives
+      name: Archives
+      url: /archives/
+      weight: 3
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 4
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    anchorLineNos: true
+    codeFences: true
+    guessSyntax: true
+    lineNos: true
+    noClasses: false
+    style: dracula
