@@ -34,15 +34,10 @@ params:
   UseHugoToc: true
 
   homeInfoParams:
-    Title: "CuiLiang.ai"
+    Title: "👋 Welcome to Liang's Log"
     Content: |
-      AI Agent Engineering in Practice
-      <br><br>
-      - Principal Software Manager @ Microsoft
-      - Former Senior Staff Engineer @ Alibaba Cloud · 10+ Years in Distributed Systems
-      <br><br>
-      - Background in Big Data Architecture & Data Integration
-      - Now focused on Computer Use Agent / MCP / Multi-Agent Orchestration
+      Hi, I'm Liang. 10+ years in distributed systems, now building AI Agent infrastructure full-time.
+      I write about the engineering side of agents — how they're built, deployed, and kept running in production.
 
   socialIcons:
     - name: rss
