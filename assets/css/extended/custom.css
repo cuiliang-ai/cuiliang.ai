@@ -1,0 +1,98 @@
+/* Lil'Log 风格 + 中文排版优化 */
+
+/* 字体：优先使用各平台优质中文无衬线字体 */
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB",
+    "Noto Sans SC", "Source Han Sans SC",
+    Roboto, sans-serif;
+}
+
+/* 正文：适配中文阅读的行高和间距 */
+.post-content {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+}
+
+.post-content p {
+  margin-bottom: 1.2em;
+}
+
+/* 列表项间距 */
+.post-content li {
+  margin-bottom: 0.4em;
+  line-height: 1.8;
+}
+
+/* 标题：微调间距让层次更分明 */
+.post-content h2 {
+  margin-top: 2em;
+  margin-bottom: 0.8em;
+}
+
+/* 引用块：增加内边距，更有呼吸感 */
+.post-content blockquote {
+  padding: 0.8em 1.2em;
+  line-height: 1.8;
+}
+
+/* 图片：文章内正常展示，居中 */
+.post-content img {
+  display: block;
+  margin: 1.5em auto;
+  border-radius: 4px;
+}
+
+/* About 页二维码等小图限宽 */
+.post-content img[alt*="二维码"] {
+  max-width: 280px;
+}
+
+/* 隐藏暗色模式切换按钮 — 跟随系统自动切换 */
+#theme-toggle {
+  display: none;
+}
+
+/* 首页文章列表：去掉白色卡片，融入背景 */
+.post-entry {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  box-shadow: none;
+  padding: 1.2em 0;
+  margin: 0;
+}
+
+/* 首页第一篇文章：同样去掉卡片样式 */
+.first-entry {
+  min-height: auto;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  box-shadow: none;
+  padding: 1.2em 0;
+  margin: 0;
+}
+
+.first-entry .entry-header h2 {
+  font-size: 1.3rem;
+}
+
+/* 导航栏：简洁紧凑 */
+.nav {
+  max-width: 750px;
+}
+
+/* 隐藏面包屑 — Lil'Log 风格不用 */
+.breadcrumbs {
+  display: none;
+}
+
+/* 页脚：低调 */
+.footer {
+  opacity: 0.7;
+}

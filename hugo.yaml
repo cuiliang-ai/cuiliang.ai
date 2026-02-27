@@ -22,15 +22,15 @@ params:
   title: "CuiLiang.ai"
   description: "AI Agent Engineering in Practice"
   keywords: [AI Agent, CUA, MCP, LLM, Computer Use Agent]
-  author: "LiangShu"
+  author: "Cui Liang"
   defaultTheme: auto
   ShowReadingTime: true
-  ShowShareButtons: true
+  ShowShareButtons: false
   ShowPostNavLinks: true
-  ShowBreadCrumbs: true
+  ShowBreadCrumbs: false
   ShowCodeCopyButtons: true
-  ShowWordCount: true
-  ShowRssButtonInSectionTermList: true
+  ShowWordCount: false
+  ShowRssButtonInSectionTermList: false
   UseHugoToc: true
 
   homeInfoParams:
@@ -45,8 +45,6 @@ params:
       - Now focused on Computer Use Agent / MCP / Multi-Agent Orchestration
 
   socialIcons:
-    - name: github
-      url: "https://github.com/your-github-username"
     - name: rss
       url: "/index.xml"
 
