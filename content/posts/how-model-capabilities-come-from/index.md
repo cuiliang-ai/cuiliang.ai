@@ -1,7 +1,7 @@
 ---
 title: "模型的能力是怎么来的：从预训练到 RLHF"
 date: 2026-02-26
-draft: true
+draft: false
 summary: "预训练压缩知识、SFT 教会格式、RLHF 对齐偏好、Function Calling 赋予工具能力——面向 Agent 开发者的模型训练全景指南。"
 description: "预训练压缩知识、SFT 教会格式、RLHF 对齐偏好、Function Calling 赋予工具能力——面向 Agent 开发者的模型训练全景指南。"
 tags: ["LLM", "Agent", "预训练", "SFT", "RLHF", "Function Calling", "微调"]
