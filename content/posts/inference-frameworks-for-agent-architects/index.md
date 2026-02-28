@@ -11,7 +11,7 @@ series: ["面向 Agent 开发者的 LLM"]
 
 > **本文面向 Agent 领域的架构师和开发者**，自顶向下地介绍推理框架的全貌。你不需要成为 CUDA 工程师，但你需要理解推理层如何影响你的每一个架构决策。
 >
-> 📌 **本文是三篇系列的第三篇**。第一篇《一句话是怎么变成 AI 回复的：LLM 的工作原理》讲模型如何处理输入并生成输出，第二篇《模型的能力是怎么来的：从预训练到 RLHF》讲模型能力的来源。本篇聚焦推理层：当模型部署为服务后，它的运行方式如何影响你的 Agent 架构决策。
+> 📌 **本文是三篇系列的第三篇**。第一篇[《一句话是怎么变成 AI 回复的：LLM 的工作原理》](/posts/how-a-sentence-becomes-an-ai-response/)讲模型如何处理输入并生成输出，第二篇[《模型的能力是怎么来的：从预训练到 RLHF》](/posts/how-model-capabilities-come-from/)讲模型能力的来源。本篇聚焦推理层：当模型部署为服务后，它的运行方式如何影响你的 Agent 架构决策。
 
 ---
 
@@ -649,7 +649,7 @@ N 轮 CUA 累计视觉 token              ≈ N × tokens_per_screenshot（若�
 
 这也是为什么推理工程在大模型 Agent 时代，已经从一个后端运维话题，变成了**每一位 Agent 架构师和开发者都需要掌握的核心知识**。
 
-> 📌 **本系列的其他两篇**：如果你还没读过第一篇《一句话是怎么变成 AI 回复的：LLM 的工作原理》，它会帮你建立从 Tokenization 到自回归生成的完整认知，本文中的 KV Cache、Prefill/Decode、上下文成本等概念都建立在那个基础之上。第二篇《模型的能力是怎么来的：从预训练到 RLHF》讲模型能力的来源，包括 Function Calling 是怎么训练出来的。
+> 📌 **本系列的其他两篇**：如果你还没读过第一篇[《一句话是怎么变成 AI 回复的：LLM 的工作原理》](/posts/how-a-sentence-becomes-an-ai-response/)，它会帮你建立从 Tokenization 到自回归生成的完整认知，本文中的 KV Cache、Prefill/Decode、上下文成本等概念都建立在那个基础之上。第二篇[《模型的能力是怎么来的：从预训练到 RLHF》](/posts/how-model-capabilities-come-from/)讲模型能力的来源，包括 Function Calling 是怎么训练出来的。
 
 ---
 
