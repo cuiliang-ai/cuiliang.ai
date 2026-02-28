@@ -39,6 +39,7 @@ params:
   title: "CuiLiang.ai"
   description: "AI Agent Engineering in Practice"
   keywords: [AI Agent, CUA, MCP, LLM, Computer Use Agent]
+  images: ["/og-default.png"]
   author: "Cui Liang"
   defaultTheme: auto
   ShowReadingTime: true
