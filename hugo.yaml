@@ -1,8 +1,20 @@
 baseURL: "https://cuiliang.ai/"
-languageCode: "en"
 title: "CuiLiang.ai"
 theme: "PaperMod"
 hasCJKLanguage: true
+defaultContentLanguage: zh
+defaultContentLanguageInSubdir: false
+
+languages:
+  zh:
+    languageName: "中文"
+    languageCode: "zh"
+    weight: 1
+  en:
+    languageName: "English"
+    languageCode: "en"
+    weight: 2
+
 taxonomies:
   tag: tags
   category: categories
@@ -60,6 +72,9 @@ params:
   cover:
     linkFullImages: true
     responsiveImages: true
+
+  umami:
+    websiteId: "587d983c-1f19-4a35-9f2f-eae441e620ed"
 
 menu:
   main:
