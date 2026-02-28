@@ -3,3 +3,5 @@ resources/
 .hugo_build.lock
 screenshot-*.png
 .claude/settings.local.json
+*.pdf
+nul
