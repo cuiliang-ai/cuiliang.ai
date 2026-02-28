@@ -63,9 +63,9 @@ params:
 
 menu:
   main:
-    - identifier: search
-      name: Search
-      url: /search/
+    - identifier: series
+      name: Series
+      url: /series/
       weight: 1
     - identifier: tags
       name: Tags
@@ -75,13 +75,13 @@ menu:
       name: Archives
       url: /archives/
       weight: 3
-    - identifier: series
-      name: Series
-      url: /series/
-      weight: 4
     - identifier: about
       name: About
       url: /about/
+      weight: 4
+    - identifier: search
+      name: Search
+      url: /search/
       weight: 5
 
 markup:
