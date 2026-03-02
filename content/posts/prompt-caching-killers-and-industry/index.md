@@ -1,6 +1,6 @@
 ---
 title: "Cache 杀手与行业实战：从踩坑到最佳实践"
-date: 2026-01-25
+date: 2026-01-24
 draft: false
 summary: "六大 Cache 杀手的诊断与对策，以及 Claude Code、Codex、Manus、Gemini CLI 的 Cache-Aware 架构全景扫描。"
 description: "六大 Cache 杀手的诊断与对策，以及 Claude Code、Codex、Manus、Gemini CLI 的 Cache-Aware 架构全景扫描。"

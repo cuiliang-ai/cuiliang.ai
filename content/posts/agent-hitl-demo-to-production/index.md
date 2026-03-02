@@ -1,6 +1,6 @@
 ---
 title: "[HITL 4/5] 从 Demo 到生产的距离"
-date: 2026-01-22
+date: 2026-03-01T13:00:00+08:00
 draft: false
 summary: "有状态 Agent vs 无状态 Web 的结构性矛盾，Checkpoint 的四层状态，异步审批的 12 步流程，状态膨胀治理，滑动自主性的工程实现。"
 description: "有状态 Agent vs 无状态 Web 的结构性矛盾，Checkpoint 的四层状态，异步审批的 12 步流程，状态膨胀治理，滑动自主性的工程实现。"
