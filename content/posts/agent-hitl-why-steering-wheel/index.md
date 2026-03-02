@@ -1,7 +1,7 @@
 ---
 title: "[HITL 1/5] Agent 为什么需要方向盘"
 date: 2026-01-19
-draft: true
+draft: false
 summary: "Agent 能调工具就有外部副作用，有副作用就需要控制机制。System Prompt 不够——生产环境需要模型侧软控制和框架侧硬控制双层防御。"
 description: "Agent 能调工具就有外部副作用，有副作用就需要控制机制。System Prompt 不够——生产环境需要模型侧软控制和框架侧硬控制双层防御。"
 tags: ["AI Agent", "HITL", "Human-in-the-Loop", "Agent Safety"]

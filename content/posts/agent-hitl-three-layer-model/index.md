@@ -1,7 +1,7 @@
 ---
 title: "[HITL 2/5] HITL 的三层解剖"
 date: 2026-01-20
-draft: true
+draft: false
 summary: "三层模型拆解 HITL：Layer 1 定义人类角色（把关人/协作者/纠正者），Layer 2 定义工程机制，Layer 3 定义基础设施（Checkpoint/滑动自主性）。"
 description: "三层模型拆解 HITL：Layer 1 定义人类角色（把关人/协作者/纠正者），Layer 2 定义工程机制，Layer 3 定义基础设施（Checkpoint/滑动自主性）。"
 tags: ["AI Agent", "HITL", "Human-in-the-Loop", "Checkpoint", "Agent Framework"]

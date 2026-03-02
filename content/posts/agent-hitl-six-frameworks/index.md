@@ -1,7 +1,7 @@
 ---
 title: "[HITL 3/5] 六个框架，六种答卷"
 date: 2026-01-21
-draft: true
+draft: false
 summary: "用三层模型对 LangGraph、AutoGen、CrewAI、Semantic Kernel、MS Agent Framework、Claude Code 做 HITL 体检。结论：Checkpoint 是分水岭。"
 description: "用三层模型对 LangGraph、AutoGen、CrewAI、Semantic Kernel、MS Agent Framework、Claude Code 做 HITL 体检。结论：Checkpoint 是分水岭。"
 tags: ["AI Agent", "HITL", "LangGraph", "AutoGen", "CrewAI", "Semantic Kernel", "Agent Framework"]

@@ -1,7 +1,7 @@
 ---
 title: "[HITL 番外] 微软的 Agent 框架三国演义"
 date: 2026-01-24
-draft: true
+draft: false
 summary: "AutoGen、Semantic Kernel 与 Agent Framework 的分裂与统一。从 2023 年两条平行线，到 2024 年 AutoGen 一分为二，再到 2025 年合并为 Microsoft Agent Framework。"
 description: "AutoGen、Semantic Kernel 与 Agent Framework 的分裂与统一。从 2023 年两条平行线，到 2024 年 AutoGen 一分为二，再到 2025 年合并为 Microsoft Agent Framework。"
 tags: ["AI Agent", "AutoGen", "Semantic Kernel", "Microsoft Agent Framework", "AG2"]
