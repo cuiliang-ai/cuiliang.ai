@@ -2,6 +2,7 @@ baseURL: "https://cuiliang.ai/"
 title: "CuiLiang.ai"
 theme: "PaperMod"
 hasCJKLanguage: true
+enableRobotsTXT: true
 defaultContentLanguage: zh
 defaultContentLanguageInSubdir: false
 

@@ -7,6 +7,8 @@ description: "预训练压缩知识、SFT 教会格式、RLHF 对齐偏好、Fun
 tags: ["LLM", "Agent", "预训练", "SFT", "RLHF", "Function Calling", "微调"]
 categories: ["AI Agent Engineering"]
 series: ["面向 Agent 开发者的 LLM"]
+ShowToc: true
+TocOpen: true
 ---
 
 > **本文面向 Agent 开发者和 AI 应用工程师**，拆解模型从"一堆随机数"到"能当 Agent 大脑"的完整训练历程。你不需要自己训模型，但读完后你会理解：为什么微调会让模型变笨、为什么同源模型能力差异巨大、以及 Function Calling 到底是怎么来的。

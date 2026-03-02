@@ -7,6 +7,8 @@ description: "从 KV Cache 到 Prompt Cache 的认知跃迁：前缀精确匹配
 tags: ["Prompt Caching", "KV Cache", "Agent", "LLM", "Cost Optimization"]
 categories: ["AI Agent Engineering"]
 series: ["Agent 工程师的 Prompt Caching"]
+ShowToc: true
+TocOpen: true
 ---
 
 > 📌 **本文是「Agent 工程师的 Prompt Caching」系列的第 2/4 篇**。第一篇讲 KV Cache 底层原理，第二篇讲 Prompt Cache 核心约束，第三篇讲实战踩坑与行业全景，第四篇讲 Context Engineering 架构手艺。

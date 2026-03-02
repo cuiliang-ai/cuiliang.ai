@@ -7,6 +7,8 @@ description: "六大 Cache 杀手的诊断与对策，以及 Claude Code、Codex
 tags: ["Prompt Caching", "KV Cache", "Agent", "Claude Code", "Manus", "OpenAI Codex"]
 categories: ["AI Agent Engineering"]
 series: ["Agent 工程师的 Prompt Caching"]
+ShowToc: true
+TocOpen: true
 ---
 
 > 📌 **本文是「Agent 工程师的 Prompt Caching」系列的第 3/4 篇**。第一篇讲 KV Cache 底层原理，第二篇讲 Prompt Cache 核心约束，第三篇讲实战踩坑与行业全景，第四篇讲 Context Engineering 架构手艺。

@@ -7,6 +7,8 @@ description: "自顶向下拆解推理框架：延迟构成、上下文成本、
 tags: ["LLM", "Agent", "Inference", "vLLM", "KV Cache", "推理优化"]
 categories: ["AI Agent Engineering"]
 series: ["面向 Agent 开发者的 LLM"]
+ShowToc: true
+TocOpen: true
 ---
 
 > **本文面向 Agent 领域的架构师和开发者**，自顶向下地介绍推理框架的全貌。你不需要成为 CUDA 工程师，但你需要理解推理层如何影响你的每一个架构决策。

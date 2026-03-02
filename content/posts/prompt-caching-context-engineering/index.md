@@ -7,6 +7,8 @@ description: "Context Rot 的物理现实、三层压缩策略、文件系统作
 tags: ["Prompt Caching", "Context Engineering", "Agent", "LLM", "CLAUDE.md"]
 categories: ["AI Agent Engineering"]
 series: ["Agent 工程师的 Prompt Caching"]
+ShowToc: true
+TocOpen: true
 ---
 
 > 📌 **本文是「Agent 工程师的 Prompt Caching」系列的第 4/4 篇**（完结篇）。第一篇讲 KV Cache 底层原理，第二篇讲 Prompt Cache 核心约束，第三篇讲实战踩坑与行业全景，第四篇讲 Context Engineering 架构手艺。
