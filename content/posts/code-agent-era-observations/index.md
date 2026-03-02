@@ -7,6 +7,8 @@ description: "经验贬值的非对称性、成长路径的梯子断裂、精英
 tags: ["Code Agent", "Vibe Coding", "Software Engineering", "AI"]
 categories: ["AI Agent Engineering"]
 series: ["Bilingual"]
+ShowToc: true
+TocOpen: true
 ---
 
 最近这一年，撸代码的模式彻底变了。现在每天的工作更像是：和 Agent 探讨设计方向，督促它生成代码，再拉着它一起 Debug 填坑。在我们的团队里，Code Agent 生成的代码占比已达七成，PR 贡献率也超过了 60%。基于这段时间的实践，再加上前阵子与老友叙旧的碰撞，以及今早和 LLM 的一通"推演"，有了下面这篇观察。

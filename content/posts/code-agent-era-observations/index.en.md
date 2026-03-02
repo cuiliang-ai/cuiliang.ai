@@ -7,6 +7,8 @@ description: "The asymmetry of experience devaluation, broken career ladders, th
 tags: ["Code Agent", "Vibe Coding", "Software Engineering", "AI"]
 categories: ["AI Agent Engineering"]
 series: ["Bilingual"]
+ShowToc: true
+TocOpen: true
 ---
 
 > **This article is for software engineers and engineering leaders** navigating the Code Agent transformation. Based on a year of hands-on experience with a team where 70% of code is Agent-generated, these four observations challenge the common belief that "AI levels the playing field."
