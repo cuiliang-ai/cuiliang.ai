@@ -1,6 +1,6 @@
 ---
 title: "Harness Engineering：Agent 工程的第三次范式跃迁"
-date: 2026-03-09
+date: 2026-03-10
 draft: false
 summary: "从 Prompt Engineering 到 Context Engineering，再到 Harness Engineering——Agent 时代的工程方法论正在经历第三次范式跃迁。这篇文章帮你搞清楚它是什么、为什么突然火了、以及怎么上手。"
 description: "从 Prompt Engineering 到 Context Engineering，再到 Harness Engineering——Agent 时代的工程方法论正在经历第三次范式跃迁。这篇文章帮你搞清楚它是什么、为什么突然火了、以及怎么上手。"
