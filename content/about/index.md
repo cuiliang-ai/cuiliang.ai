@@ -30,19 +30,19 @@ ShowBreadCrumbs: false
 
 本站文章以**中文**为主，部分文章提供英文版本。
 
-## 亮叔有数
+## CuiLiang.ai
 
-我同时运营微信公众号**「亮叔有数」**，是我发布最频繁的中文内容平台。
+我同时运营微信公众号**「CuiLiang.ai」**，是我发布最频繁的中文内容平台。
 
 > 泡一杯咖啡，和你聊聊大数据与 AI 那些事儿。懂技术，更懂生活；心中有数，遇事不慌。
 
-微信搜索「亮叔有数」即可关注，或扫描下方二维码：
+微信搜索「CuiLiang.ai」即可关注，或扫描下方二维码：
 
-![亮叔有数公众号二维码](qrcode.jpg)
+![CuiLiang.ai 公众号二维码](qrcode.jpg)
 
 ## 找到我
 
-- **公众号**：亮叔有数（微信搜索）
+- **公众号**：CuiLiang.ai（微信搜索）
 - **Email**：[cuiliang05@gmail.com](mailto:cuiliang05@gmail.com)
 
 ---
