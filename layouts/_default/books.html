@@ -1,0 +1,40 @@
+{{- define "main" }}
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description">{{ .Description }}</div>
+    {{- end }}
+    <div class="post-meta">
+      <span id="busuanzi_container_page_pv" style="display:none">
+        <span id="busuanzi_value_page_pv"></span> views
+      </span>
+    </div>
+  </header>
+
+  <div class="post-content">
+    <p class="books-intro">
+      我写的技术深度解析系列。点击卡片阅读全书。
+    </p>
+
+    <div class="books-grid">
+      {{- range .Params.books }}
+      <a class="book-card" href="{{ .url }}" target="_blank" rel="noopener">
+        <h3 class="book-name">{{ .name }}</h3>
+        <p class="book-desc">{{ .description }}</p>
+        {{- with .tags }}
+        <div class="book-tags">
+          {{- range . }}
+          <span class="book-tag">{{ . }}</span>
+          {{- end }}
+        </div>
+        {{- end }}
+        <div class="book-stats">{{ .stats }}</div>
+      </a>
+      {{- end }}
+    </div>
+  </div>
+</article>
+
+{{- end }}{{/* end main */}}
