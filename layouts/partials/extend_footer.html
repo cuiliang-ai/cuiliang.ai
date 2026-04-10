@@ -1,0 +1,12 @@
+{{- /* Busuanzi page view counter - only on article single pages */ -}}
+<script>
+(function() {
+  var postMeta = document.querySelector('.post-single .post-meta');
+  if (!postMeta) return;
+  var pvSpan = document.createElement('span');
+  pvSpan.id = 'busuanzi_container_page_pv';
+  pvSpan.style.display = 'none';
+  pvSpan.innerHTML = '&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span> views';
+  postMeta.appendChild(pvSpan);
+})();
+</script>
