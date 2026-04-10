@@ -264,6 +264,21 @@ body {
   color: #22c55e;
 }
 
+.skill-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 0.8em;
+  font-size: 0.82rem;
+  color: var(--secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.skill-github:hover {
+  color: var(--primary);
+}
+
 /* ============================================
    Books 页面
    ============================================ */
