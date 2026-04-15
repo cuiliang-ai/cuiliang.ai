@@ -22,4 +22,9 @@ books:
     tags: ["Codex CLI", "Rust", "OpenAI"]
     stats: "19章 · 5篇 · 持续更新中"
     url: "https://book.cuiliang.ai/codex-deep-dive/"
+  - name: "Hermes Agent Deep Dive"
+    description: "Nous Research 自进化 AI Agent 源码深度解析。基于 Python 源码剖析 Agentic Loop、工具生态、学习闭环与多平台网关。"
+    tags: ["Hermes Agent", "Python", "Nous Research", "自进化"]
+    stats: "30章 · 7篇 · 2附录 · 交互式"
+    url: "https://book.cuiliang.ai/hermes-agent-deep-dive/"
 ---
