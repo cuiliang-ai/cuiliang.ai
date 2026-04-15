@@ -42,6 +42,7 @@ params:
   keywords: [AI Agent, CUA, MCP, LLM, Computer Use Agent]
   images: ["/og-default.png"]
   author: "Cui Liang"
+  mainSections: ["posts"]
   defaultTheme: auto
   ShowReadingTime: true
   ShowShareButtons: false
@@ -92,9 +93,9 @@ menu:
       name: Books
       url: /books/
       weight: 3
-    - identifier: tags
-      name: Tags
-      url: /tags/
+    - identifier: notes
+      name: Notes
+      url: /notes/
       weight: 4
     - identifier: archives
       name: Archives
@@ -104,10 +105,6 @@ menu:
       name: About
       url: /about/
       weight: 6
-    - identifier: search
-      name: Search
-      url: /search/
-      weight: 7
 
 markup:
   goldmark:
