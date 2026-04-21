@@ -126,15 +126,14 @@ flowchart LR
 
 ### 几个要注意的细节
 
-**a) Protocol 而不是基类**
+**a) 用 Protocol 而不是基类**
 
-`AgentRunner` 是 Protocol(Python PEP 544 的结构子类型),不是抽象基类。这不是炫技 —— 是因为我预留了三种实现:
+`AgentRunner` 用的是 Protocol(PEP 544 引入的结构化子类型 —— 不需要显式继承,只要方法签名匹配就算实现了协议),不是 ABC。原因很实际:我手里只打算先做一个 `InProcessRunner`,但脑子里还挂着两个没动手的:
 
-- `InProcessRunner`(已实装,默认)
-- `SubProcessRunner`(没做,留给"工具崩溃不能影响主进程"的场景)
-- `RemoteRunner`(没做,留给"loop 跑在另一台机器"的场景)
+- `SubProcessRunner` —— 哪天工具崩溃不想拖死主进程,就要它
+- `RemoteRunner` —— 哪天 loop 想跑到另一台机器上去,就要它
 
-只做了第一个,但接口先定出来。哪怕只有一个实现,Protocol 本身也强迫我把"Runner 的职责边界"想清楚了 —— 否则边界就会被现有实现吸附。
+Protocol 比基类轻,加新实现不用回头改继承关系。但更重要的是,只要写下这个 Protocol,我就被迫先把"Runner 到底负责什么"画清楚 —— 否则等 `InProcessRunner` 写完,这个边界就会被它的实现细节带跑。
 
 **b) Runner ≠ Loop**
 
