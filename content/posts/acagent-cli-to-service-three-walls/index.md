@@ -11,7 +11,7 @@ ShowToc: true
 TocOpen: true
 ---
 
-> 📌 **本文是「Agent CLI 到 Service 改造复盘」系列的第 1/2 篇**。本篇讲三次认知转变,下篇(写作中)展开 Channel、Resource Cap、配套基础设施和 trade-off 自陈。
+> 📌 **本文是「Agent CLI 到 Service 改造复盘」系列的第 1/2 篇**。本篇讲三次认知转变,[下篇](/posts/acagent-cli-to-service-channel-and-caps/)展开 Channel、Resource Cap、配套基础设施和 trade-off 自陈。
 
 > 以为是加层 FastAPI wrapper 的事,和 Claude Code 用 vibe coding 模式断断续续做了三天才把 service mode 跑通。不是代码量大,是发现有几个底层抽象需要从头重新设计。
 
@@ -428,9 +428,9 @@ JSONL 跑久了 replay 成本随事件数线性增长。周期性写一个 `chec
 
 ACAgent 没走这条路,因为我开始做的时候不知道自己会走到这一步。代价具体地说:**墙 2 的事件分发我重写过两次**(从 channel 替换 → channel 链表 → EventBus),**墙 3 的持久化推倒重来一次**(单文件 JSON → JSONL),墙 1 的 Runner 抽象算是一次到位但拖了大半天才决定动手拆。如果第一天就按 Service 抽象设计,这三段重写时间能省下来。这算是事后的教训。
 
-## 下一篇(写作中)
+## 下一篇
 
-后续会展开剩下的工程层细节:
+[**Channel、资源限制,和我没做的那些事**](/posts/acagent-cli-to-service-channel-and-caps/) —— 展开剩下的工程层细节:
 
 - **AttachManager** —— Channel 从 1:1 推广到 1:N 的具体做法(含慢 attacher 驱逐)
 - **Resource Cap 层级化** —— per-session / per-instance / daily 三层怎么切职责
