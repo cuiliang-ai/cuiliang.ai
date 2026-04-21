@@ -115,10 +115,10 @@ flowchart LR
   end
   subgraph After["✅ 改后:per-session Runner 集合"]
     direction TB
-    B1[HTTP req sess-1] --> R1[Runner 1<br/>own lock + messages]
-    B2[HTTP req sess-2] --> R2[Runner 2<br/>own lock + messages]
-    Reg[SessionRegistry<br/>session_id → Runner] -.routes.-> R1
-    Reg -.routes.-> R2
+    B1[HTTP req sess-1] --> Reg[SessionRegistry<br/>session_id → Runner]
+    B2[HTTP req sess-2] --> Reg
+    Reg --> R1[Runner 1<br/>own lock + messages]
+    Reg --> R2[Runner 2<br/>own lock + messages]
   end
   style Before fill:#ffe5e5
   style After fill:#e5ffe5
