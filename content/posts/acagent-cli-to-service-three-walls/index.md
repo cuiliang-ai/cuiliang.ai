@@ -392,7 +392,7 @@ JSONL 跑久了 replay 成本随事件数线性增长。周期性写一个 `chec
 
 恢复时从尾往前找最近 checkpoint,加载它的 messages,然后从 `seq=501` 开始 replay 增量。replay 成本从"整个历史"变成"距离最近 checkpoint 的事件数"。
 
-这个设计参考了数据库 WAL 的 checkpoint —— 不是我发明的,是 event sourcing 成熟领域的常见手法。值得的话花半小时读一下 PostgreSQL 的 WAL checkpoint 文档。
+这个设计抄的是数据库 WAL 的 checkpoint 思路,big data 圈里的老方法。
 
 ### 回头看
 
