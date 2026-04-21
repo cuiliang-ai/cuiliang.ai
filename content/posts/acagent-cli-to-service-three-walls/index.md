@@ -1,17 +1,17 @@
 ---
-title: "[ACAgent CLI→Service 1/2] 我撞到的三堵墙"
+title: "[Agent CLI→Service 1/2] 我撞到的三堵墙"
 date: 2026-04-21T10:00:00+08:00
 draft: false
 summary: "想让自己的 agent 跟上 Claude Code web 端的形态,顺便把 agent 架构从'读过'变成'撞过'。三天改造里的三次认知转变:会话 ≠ 进程、事件流 ≠ 输出、持久化 ≠ 存档。"
 description: "从 CLI 改造 ACAgent 到 Service Mode 的复盘上篇:三堵撞上去才想明白的墙,以及一个反直觉的结论 —— CLI 是 Service 的退化情形。"
 tags: ["AI Agent", "Architecture", "Service Mode", "Event Sourcing", "ACAgent"]
 categories: ["AI Agent Engineering"]
-series: ["ACAgent CLI 到 Service 改造复盘"]
+series: ["Agent CLI 到 Service 改造复盘"]
 ShowToc: true
 TocOpen: true
 ---
 
-> 📌 **本文是「ACAgent CLI 到 Service 改造复盘」系列的第 1/2 篇**。本篇讲三次认知转变,下篇(写作中)展开 Channel、Resource Cap、配套基础设施和 trade-off 自陈。
+> 📌 **本文是「Agent CLI 到 Service 改造复盘」系列的第 1/2 篇**。本篇讲三次认知转变,下篇(写作中)展开 Channel、Resource Cap、配套基础设施和 trade-off 自陈。
 
 > 以为是加层 FastAPI wrapper 的事,和 Claude Code 用 vibe coding 模式断断续续做了三天才把 service mode 跑通。不是代码量大,是发现有几个底层抽象需要从头重新设计。
 
