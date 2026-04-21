@@ -128,7 +128,7 @@ flowchart LR
 
 **a) 用 Protocol 而不是基类**
 
-`AgentRunner` 用的是 Protocol(PEP 544 引入的结构化子类型 —— 不需要显式继承,只要方法签名匹配就算实现了协议),不是 ABC。原因很实际:我手里只打算先做一个 `InProcessRunner`,但脑子里还挂着两个没动手的:
+`AgentRunner` 用的是 Protocol(PEP 544),不是 ABC。原因很实际:我手里只打算先做一个 `InProcessRunner`,但脑子里还挂着两个没动手的:
 
 - `SubProcessRunner` —— 哪天工具崩溃不想拖死主进程,就要它
 - `RemoteRunner` —— 哪天 loop 想跑到另一台机器上去,就要它
