@@ -52,6 +52,7 @@ params:
   ShowWordCount: false
   ShowRssButtonInSectionTermList: false
   UseHugoToc: true
+  comments: false
 
   homeInfoParams:
     Title: "👋 Welcome to Liang's Log"
@@ -101,10 +102,14 @@ menu:
       name: Archives
       url: /archives/
       weight: 5
+    - identifier: guestbook
+      name: Guestbook
+      url: /guestbook/
+      weight: 6
     - identifier: about
       name: About
       url: /about/
-      weight: 6
+      weight: 7
 
 markup:
   goldmark:
