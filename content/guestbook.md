@@ -16,6 +16,6 @@ Questions about a post, corrections, follow-ups, or just saying hi — all welco
 
 Sign in with your GitHub account to comment. I'll see notifications on GitHub and try to reply.
 
-If you'd rather not post publicly, email works too: [liang.cui@cuiliang.ai](mailto:liang.cui@cuiliang.ai).
+If you'd rather not post publicly, email works too: [cuiliang05@gmail.com](mailto:cuiliang05@gmail.com).
 
 ---
