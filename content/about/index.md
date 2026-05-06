@@ -2,55 +2,43 @@
 title: "About"
 layout: "single"
 url: "/about/"
-summary: "关于Cui Liang"
+summary: "About Cui Liang"
 ShowReadingTime: false
 ShowWordCount: false
 ShowBreadCrumbs: false
 ---
 
-## Hi, 我是 Cui Liang
+## Hi, I'm Cui Liang
 
-十多年分布式系统和大数据架构经验，先后在**阿里云**担任 Senior Staff Engineer，现在在**微软**担任 Principal Software Manager。
+Principal Software Manager at **Microsoft**, former Senior Staff Engineer at **Alibaba Cloud**, with 10+ years in distributed systems and big data architecture.
 
-我不是算法工程师。我关心的是：Agent 怎么建、怎么部署、怎么在生产环境跑得稳。
+I'm not an ML researcher. What I care about is: how agents are built, how they're deployed, and how they're kept running in production.
 
-现在全力投入 **AI Agent 基础设施与应用开发**，聚焦以下方向：
+These days I'm working full-time on **AI Agent infrastructure and applications**, with a focus on:
 
-- **Computer Use Agent** — 能操作真实软件的 Agent，不只是生成文本
-- **Multi-Agent Orchestration** — 多 Agent 协作的架构模式与实战
-- **Context Engineering** — 在正确的时间，把正确的信息，喂给正确的模型
+- **Computer Use Agent** — agents that operate real software, not just generate text
+- **Multi-Agent Orchestration** — architectural patterns for agent collaboration in the wild
+- **Context Engineering** — getting the right information to the right model at the right time
 
-## 这里写什么
+## What you'll find here
 
-从一个基础设施和应用开发者的视角，拆解 AI Agent 生态中正在发生的事情：
+A practitioner's view of what's actually happening across the AI Agent ecosystem:
 
-- Agent 框架的架构选型与工程化落地
-- 工具链的实战踩坑和避坑指南
-- 那些"大家都遇到但很少有人系统写过"的基础设施痛点
+- Architectural choices for agent frameworks, and what it takes to ship them
+- Real-world lessons from working with agent toolchains — what breaks, what to avoid
+- Infrastructure pain points that everyone hits but few people write down
 
-本站文章以**中文**为主，部分文章提供英文版本。
+## CuiLiang.ai (WeChat Official Account)
 
-## CuiLiang.ai
+I also run a Chinese WeChat account, **「CuiLiang.ai」**, where I publish most frequently in Chinese.
 
-我同时运营微信公众号**「CuiLiang.ai」**，是我发布最频繁的中文内容平台。
+> Grab a coffee — let's talk about big data and AI. Tech-savvy, life-savvy; informed and unflappable.
 
-> 泡一杯咖啡，和你聊聊大数据与 AI 那些事儿。懂技术，更懂生活；心中有数，遇事不慌。
+Search "CuiLiang.ai" on WeChat, or scan the QR code below:
 
-微信搜索「CuiLiang.ai」即可关注，或扫描下方二维码：
+![CuiLiang.ai WeChat QR code](qrcode.jpg)
 
-![CuiLiang.ai 公众号二维码](qrcode.jpg)
+## Find me
 
-## 找到我
-
-- **公众号**：CuiLiang.ai（微信搜索）
-- **Email**：[cuiliang05@gmail.com](mailto:cuiliang05@gmail.com)
-
----
-
-## In English
-
-I'm Cui Liang, a Principal Software Manager at **Microsoft** and former Senior Staff Engineer at **Alibaba Cloud**, with 10+ years in distributed systems and big data architecture.
-
-Now I focus on **AI Agent infrastructure**: Computer Use Agents, MCP (Model Context Protocol), Multi-Agent Orchestration, and Context Engineering. I write from the practitioner's perspective — not how models are trained, but how agent systems are built, deployed, and kept running in production.
-
-Most content here is in **Chinese**, with selected posts available in English. Feel free to reach out at [cuiliang05@gmail.com](mailto:cuiliang05@gmail.com).
+- **WeChat Official Account**: CuiLiang.ai (search on WeChat)
+- **Email**: [cuiliang05@gmail.com](mailto:cuiliang05@gmail.com)
