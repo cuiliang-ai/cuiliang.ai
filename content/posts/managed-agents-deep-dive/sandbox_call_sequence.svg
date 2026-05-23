@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="900" viewBox="0 0 1260 900" role="img" aria-label="Self-hosted Sandbox 调用链路时序图">
+  <style>
+    .bg{fill:#fbfaf7}
+    .lane{stroke:#1f2328;stroke-width:1.5;fill:#ffffff;rx:10;ry:10}
+    .lane-anth{fill:#eef6ff}
+    .lane-cust{fill:#f4f7ee}
+    .lane-rt{fill:#fff7ed}
+    .lane-title{font:700 16px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#111827}
+    .lane-sub{font:13px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#4b5563}
+    .actor{stroke:#1f2328;stroke-width:1.5;rx:8;ry:8;fill:#ffffff}
+    .actor-text{font:700 14px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#111827}
+    .lifeline{stroke:#9ca3af;stroke-width:1;stroke-dasharray:3 4}
+    .actbar{fill:#dbeafe;stroke:#2563eb;stroke-width:1}
+    .actbar-cust{fill:#dcfce7;stroke:#15803d;stroke-width:1}
+    .actbar-rt{fill:#fed7aa;stroke:#b45309;stroke-width:1}
+    .msg{stroke:#1f2937;stroke-width:1.6;fill:none;marker-end:url(#tri)}
+    .msg-ret{stroke:#1f2937;stroke-width:1.6;fill:none;stroke-dasharray:6 4;marker-end:url(#tri)}
+    .mtxt{font:13px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#111827}
+    .mnote{font:12px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#6b7280}
+    .step{font:700 13px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#ffffff}
+    .step-c{fill:#1f2937}
+    .loopbox{stroke:#b45309;stroke-width:1.5;stroke-dasharray:6 4;fill:none;rx:8;ry:8}
+    .looptag{font:700 12px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#b45309}
+    .looptag-bg{fill:#fff7ed;stroke:#b45309;stroke-width:1}
+    .boundary{fill:none;stroke-width:2;stroke-dasharray:10 6;rx:14;ry:14}
+    .boundary-anth{stroke:#2563eb}
+    .boundary-cust{stroke:#15803d}
+    .btag{font:700 13px 'Segoe UI','Microsoft YaHei',sans-serif}
+    .btag-anth{fill:#2563eb}
+    .btag-cust{fill:#15803d}
+    .btag-bg{fill:#fbfaf7}
+  </style>
+  <defs>
+    <marker id="tri" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#1f2937"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1260" height="900"/>
+
+  <!-- ====== Environment boundaries (wrap lanes + lifelines) ====== -->
+  <!-- Anthropic environment: covers Brain Loop + Work Queue lanes -->
+  <rect class="boundary boundary-anth" x="10" y="10" width="520" height="880"/>
+  <rect class="btag-bg" x="30" y="2" width="170" height="18"/>
+  <text class="btag btag-anth" x="115" y="16" text-anchor="middle">Anthropic 环境</text>
+
+  <!-- Customer environment: covers Worker + Launcher + Sandbox Runtime lanes -->
+  <rect class="boundary boundary-cust" x="550" y="10" width="700" height="880"/>
+  <rect class="btag-bg" x="570" y="2" width="160" height="18"/>
+  <text class="btag btag-cust" x="650" y="16" text-anchor="middle">客户环境</text>
+
+  <!-- ====== Lane headers (background bands) ====== -->
+  <!-- Anthropic side: 2 actors -->
+  <rect class="lane lane-anth" x="20" y="20" width="500" height="60"/>
+  <text class="lane-title" x="270" y="46" text-anchor="middle">Anthropic Control Plane</text>
+  <text class="lane-sub" x="270" y="66" text-anchor="middle">brain loop · session event log · work queue</text>
+
+  <!-- Customer side header -->
+  <rect class="lane lane-cust" x="540" y="20" width="380" height="60"/>
+  <text class="lane-title" x="730" y="46" text-anchor="middle">Customer Infrastructure</text>
+  <text class="lane-sub" x="730" y="66" text-anchor="middle">EnvironmentWorker SDK · per-session launcher</text>
+
+  <!-- Sandbox runtime header -->
+  <rect class="lane lane-rt" x="940" y="20" width="300" height="60"/>
+  <text class="lane-title" x="1090" y="46" text-anchor="middle">Sandbox Runtime</text>
+  <text class="lane-sub" x="1090" y="66" text-anchor="middle">per-session isolated process</text>
+
+  <!-- ====== Actors row ====== -->
+  <!-- Actor x positions -->
+  <!-- Brain: 150, WorkQueue: 400, Worker: 650, Launcher: 850, tool_runner: 1090 -->
+  <rect class="actor" x="80" y="100" width="140" height="44"/>
+  <text class="actor-text" x="150" y="128" text-anchor="middle">Brain Loop</text>
+
+  <rect class="actor" x="330" y="100" width="140" height="44"/>
+  <text class="actor-text" x="400" y="128" text-anchor="middle">Work Queue</text>
+
+  <rect class="actor" x="580" y="100" width="140" height="44"/>
+  <text class="actor-text" x="650" y="128" text-anchor="middle">Worker Poller</text>
+
+  <rect class="actor" x="780" y="100" width="140" height="44"/>
+  <text class="actor-text" x="850" y="128" text-anchor="middle">Launcher</text>
+
+  <rect class="actor" x="1020" y="100" width="140" height="44"/>
+  <text class="actor-text" x="1090" y="128" text-anchor="middle">tool_runner</text>
+
+  <!-- ====== Lifelines (vertical dashed) ====== -->
+  <line class="lifeline" x1="150" y1="144" x2="150" y2="860"/>
+  <line class="lifeline" x1="400" y1="144" x2="400" y2="860"/>
+  <line class="lifeline" x1="650" y1="144" x2="650" y2="860"/>
+  <line class="lifeline" x1="850" y1="144" x2="850" y2="860"/>
+  <line class="lifeline" x1="1090" y1="144" x2="1090" y2="860"/>
+
+  <!-- ====== Activation bars ====== -->
+  <!-- Brain active throughout -->
+  <rect class="actbar" x="144" y="160" width="12" height="680"/>
+  <!-- Worker active from step 2 -->
+  <rect class="actbar-cust" x="644" y="200" width="12" height="640"/>
+  <!-- Launcher active for step 3 only -->
+  <rect class="actbar-cust" x="844" y="270" width="12" height="80"/>
+  <!-- tool_runner active from step 4 onward -->
+  <rect class="actbar-rt" x="1084" y="360" width="12" height="480"/>
+
+  <!-- ====== Step 1: Brain pushes work item to Queue ====== -->
+  <path class="msg" d="M156 180 L394 180"/>
+  <text class="mtxt" x="275" y="174" text-anchor="middle">① 提交 session work item (data.type=session)</text>
+  <circle cx="60" cy="180" r="13" fill="#2563eb"/>
+  <text class="step" x="60" y="184" text-anchor="middle">1</text>
+
+  <!-- ====== Step 2: Worker polls queue ====== -->
+  <path class="msg" d="M644 220 L406 220"/>
+  <text class="mtxt" x="525" y="214" text-anchor="middle">② poll /v1/environments/{id}/work/poll</text>
+  <path class="msg-ret" d="M406 250 L644 250"/>
+  <text class="mtxt" x="525" y="244" text-anchor="middle">work item (含 session_id) + ack</text>
+  <circle cx="60" cy="235" r="13" fill="#15803d"/>
+  <text class="step" x="60" y="239" text-anchor="middle">2</text>
+
+  <!-- ====== Step 3: Worker spawns / reuses runtime via Launcher ====== -->
+  <path class="msg" d="M656 290 L844 290"/>
+  <text class="mtxt" x="750" y="284" text-anchor="middle">③ launch_or_reuse(session_id)</text>
+  <path class="msg" d="M856 320 L1084 320"/>
+  <text class="mtxt" x="970" y="314" text-anchor="middle">spawn 隔离进程 / 容器 (per session)</text>
+  <text class="mnote" x="970" y="340" text-anchor="middle">已有 runtime 则复用,跳过 spawn</text>
+  <circle cx="60" cy="305" r="13" fill="#15803d"/>
+  <text class="step" x="60" y="309" text-anchor="middle">3</text>
+
+  <!-- ====== Loop block: tool-call iteration ====== -->
+  <rect class="loopbox" x="40" y="380" width="1200" height="380"/>
+  <rect class="looptag-bg" x="60" y="372" width="430" height="22"/>
+  <text class="looptag" x="74" y="389">loop  — 每个 session 内串行执行,直到 brain 给出 stop_reason</text>
+
+  <!-- Step 4: Brain issues tool_call -->
+  <path class="msg" d="M156 420 L1084 420"/>
+  <text class="mtxt" x="620" y="414" text-anchor="middle">④ tool_execution_request (tool_name, input)</text>
+  <text class="mnote" x="620" y="438" text-anchor="middle">通过 worker 转发,tool_runner 接收单次工具调用</text>
+  <circle cx="60" cy="420" r="13" fill="#1f2937"/>
+  <text class="step" x="60" y="424" text-anchor="middle">4</text>
+
+  <!-- Step 5: tool_runner dispatch and exec (self-loop on tool_runner side) -->
+  <path class="msg" d="M1096 480 C 1200 480, 1200 540, 1100 540" />
+  <text class="mtxt" x="1145" y="478" text-anchor="end">⑤ dispatch</text>
+  <text class="mnote" x="1145" y="498" text-anchor="end">AgentToolContext</text>
+  <text class="mnote" x="1145" y="514" text-anchor="end">→ Toolset / Custom Tools</text>
+  <text class="mnote" x="1145" y="530" text-anchor="end">→ FS / Network</text>
+  <circle cx="60" cy="500" r="13" fill="#b45309"/>
+  <text class="step" x="60" y="504" text-anchor="middle">5</text>
+
+  <!-- Step 6: tool_result back to brain -->
+  <path class="msg-ret" d="M1084 600 L156 600"/>
+  <text class="mtxt" x="620" y="594" text-anchor="middle">⑥ user.tool_result (stdout / output / error)</text>
+  <text class="mnote" x="620" y="618" text-anchor="middle">写入 session event log,brain 续推下一轮推理</text>
+  <circle cx="60" cy="600" r="13" fill="#1f2937"/>
+  <text class="step" x="60" y="604" text-anchor="middle">6</text>
+
+  <!-- Iteration indicator: brain decides next tool or stop -->
+  <path class="msg" d="M156 680 L1084 680"/>
+  <text class="mtxt" x="620" y="674" text-anchor="middle">↻ 下一个 tool_execution_request (若 brain 继续 reasoning)</text>
+  <text class="mnote" x="620" y="700" text-anchor="middle">同一 session 的所有 tool call 在同一个 runtime 中按到达顺序串行执行</text>
+
+  <!-- Loop end note -->
+  <text class="mnote" x="620" y="744" text-anchor="middle">退出条件: brain 返回 stop_reason / session 终止 / runtime 被回收</text>
+
+  <!-- ====== Post-loop: session end -->
+  <path class="msg-ret" d="M656 800 L406 800"/>
+  <text class="mtxt" x="525" y="794" text-anchor="middle">ack session done / heartbeat stop</text>
+  <text class="mnote" x="525" y="820" text-anchor="middle">Launcher 决定回收或保留 runtime (按隔离策略)</text>
+</svg>

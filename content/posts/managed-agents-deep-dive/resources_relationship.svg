@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="780" viewBox="0 0 1260 780" role="img" aria-label="Managed Agents 资源关系图">
+  <style>
+    .bg{fill:#fbfaf7}
+    .group{stroke:#1f2328;stroke-width:2;rx:14;ry:14}
+    .box{stroke:#1f2328;stroke-width:1.5;rx:10;ry:10}
+    .gtitle{font:700 18px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#111827}
+    .ntitle{font:700 16px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#111827}
+    .text{font:14px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#374151}
+    .legend{font:13px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#374151}
+    .edge-hold{stroke:#2563eb;stroke-width:2;fill:none;marker-end:url(#a-blue)}
+    .edge-ref{stroke:#15803d;stroke-width:2;fill:none;marker-end:url(#a-green)}
+    .edge-mount{stroke:#b45309;stroke-width:2;fill:none;stroke-dasharray:6 4;marker-end:url(#a-amber)}
+    .elabel{font:12px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#4b5563}
+    .elabel-bg{fill:#fbfaf7}
+  </style>
+  <defs>
+    <marker id="a-blue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/></marker>
+    <marker id="a-green" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#15803d"/></marker>
+    <marker id="a-amber" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#b45309"/></marker>
+  </defs>
+  <rect class="bg" width="1260" height="780"/>
+
+  <!-- ========== Definition group (top-left) ========== -->
+  <rect class="group" x="40" y="60" width="540" height="300" fill="#eef6ff"/>
+  <text class="gtitle" x="310" y="90" text-anchor="middle">Definition Resources（定义层 · 可复用 · 可版本化）</text>
+
+  <rect class="box" x="70" y="110" width="220" height="96" fill="#ffffff"/>
+  <text class="ntitle" x="180" y="136" text-anchor="middle">Agent</text>
+  <text class="text" x="180" y="160" text-anchor="middle">model + system + tools</text>
+  <text class="text" x="180" y="180" text-anchor="middle">skills[] · mcp_servers[]</text>
+  <text class="text" x="180" y="198" text-anchor="middle">tool permission config</text>
+
+  <rect class="box" x="330" y="110" width="220" height="96" fill="#ffffff"/>
+  <text class="ntitle" x="440" y="136" text-anchor="middle">Skill</text>
+  <text class="text" x="440" y="160" text-anchor="middle">reusable capability</text>
+  <text class="text" x="440" y="180" text-anchor="middle">progressive disclosure</text>
+  <text class="text" x="440" y="198" text-anchor="middle">packaged as zip</text>
+
+  <rect class="box" x="70" y="240" width="220" height="96" fill="#ffffff"/>
+  <text class="ntitle" x="180" y="266" text-anchor="middle">Environment</text>
+  <text class="text" x="180" y="290" text-anchor="middle">sandbox config</text>
+  <text class="text" x="180" y="310" text-anchor="middle">cloud | self_hosted</text>
+
+  <rect class="box" x="330" y="240" width="220" height="96" fill="#ffffff"/>
+  <text class="ntitle" x="440" y="266" text-anchor="middle">Vault</text>
+  <text class="text" x="440" y="290" text-anchor="middle">持有 Credential[]</text>
+  <text class="text" x="440" y="310" text-anchor="middle">per-user OAuth tokens</text>
+
+  <!-- Agent → Skill: ref -->
+  <path class="edge-ref" d="M290 158 L330 158"/>
+  <rect class="elabel-bg" x="294" y="138" width="32" height="16"/>
+  <text class="elabel" x="310" y="150" text-anchor="middle">引用</text>
+
+  <!-- ========== Cross-cutting group (top-right) ========== -->
+  <rect class="group" x="700" y="60" width="520" height="300" fill="#f4f7ee"/>
+  <text class="gtitle" x="960" y="90" text-anchor="middle">Cross-cutting Resources（横切资源）</text>
+
+  <rect class="box" x="730" y="110" width="220" height="96" fill="#ffffff"/>
+  <text class="ntitle" x="840" y="136" text-anchor="middle">File</text>
+  <text class="text" x="840" y="160" text-anchor="middle">Files API</text>
+  <text class="text" x="840" y="180" text-anchor="middle">被 Skill 引用为 zip</text>
+  <text class="text" x="840" y="198" text-anchor="middle">被 Session 挂为文件</text>
+
+  <rect class="box" x="970" y="110" width="220" height="96" fill="#ffffff"/>
+  <text class="ntitle" x="1080" y="136" text-anchor="middle">MCP Tunnel</text>
+  <text class="text" x="1080" y="160" text-anchor="middle">Cloudflare tunnel</text>
+  <text class="text" x="1080" y="180" text-anchor="middle">被 Agent.mcp_servers</text>
+  <text class="text" x="1080" y="198" text-anchor="middle">通过 ID 引用</text>
+
+  <rect class="box" x="850" y="240" width="220" height="96" fill="#ffffff"/>
+  <text class="ntitle" x="960" y="266" text-anchor="middle">MemoryStore</text>
+  <text class="text" x="960" y="290" text-anchor="middle">cross-session persistence</text>
+  <text class="text" x="960" y="310" text-anchor="middle">被 Session 挂为目录</text>
+
+  <!-- Skill → File: hold -->
+  <path class="edge-hold" d="M550 158 L730 158"/>
+  <rect class="elabel-bg" x="580" y="138" width="120" height="16"/>
+  <text class="elabel" x="640" y="150" text-anchor="middle">持有 File (zip)</text>
+
+  <!-- MCP Tunnel → Agent: ref, route around right edge then top -->
+  <path class="edge-ref" d="M1080 110 L1080 40 L180 40 L180 110"/>
+  <rect class="elabel-bg" x="490" y="32" width="280" height="16"/>
+  <text class="elabel" x="630" y="44" text-anchor="middle">Agent.mcp_servers 引用 MCP Tunnel</text>
+
+  <!-- ========== Instance group (middle-bottom) ========== -->
+  <!-- Session box on left, legend/notes on right side -->
+  <rect class="group" x="40" y="420" width="540" height="320" fill="#fff7ed"/>
+  <text class="gtitle" x="310" y="450" text-anchor="middle">Instance Resources（实例层 · 一次运行的快照）</text>
+
+  <rect class="box" x="90" y="480" width="440" height="220" fill="#ffffff"/>
+  <text class="ntitle" x="310" y="512" text-anchor="middle">Session  ＝ running instance</text>
+  <text class="text" x="310" y="544" text-anchor="middle">= Agent (version pinned) + Environment</text>
+  <text class="text" x="310" y="566" text-anchor="middle">+ vault_ids[]  +  resources[]</text>
+  <line x1="130" y1="588" x2="490" y2="588" stroke="#d1d5db" stroke-width="1"/>
+  <text class="text" x="310" y="612" text-anchor="middle">resources[] 的成员类型：</text>
+  <text class="text" x="310" y="634" text-anchor="middle">• File（挂为 sandbox 文件）</text>
+  <text class="text" x="310" y="654" text-anchor="middle">• github_repository（克隆为代码目录）</text>
+  <text class="text" x="310" y="674" text-anchor="middle">• MemoryStore（挂为持久化目录）</text>
+
+  <!-- ========== Legend + key patterns (right column, parallel to Instance) ========== -->
+  <rect class="box" x="620" y="420" width="600" height="150" fill="#ffffff"/>
+  <text class="ntitle" x="640" y="448">图例</text>
+  <line class="edge-hold" x1="640" y1="475" x2="710" y2="475"/>
+  <text class="legend" x="725" y="479">持有关系（hold）：父资源拥有子资源的生命周期</text>
+  <line class="edge-ref" x1="640" y1="510" x2="710" y2="510"/>
+  <text class="legend" x="725" y="514">引用关系（ref）：通过 ID 引用，不影响生命周期</text>
+  <line class="edge-mount" x1="640" y1="545" x2="710" y2="545"/>
+  <text class="legend" x="725" y="549">挂载关系（mount）：Session 把资源挂入 sandbox 文件系统</text>
+
+  <rect class="box" x="620" y="590" width="600" height="150" fill="#ffffff"/>
+  <text class="ntitle" x="640" y="618">关键引用模式</text>
+  <text class="legend" x="640" y="644">• Definition 资源（Agent / Skill / Env / Vault）独立创建、可版本化</text>
+  <text class="legend" x="640" y="666">• Skill 持有 File（zip）—— Skill 释放时打包文件随之失效</text>
+  <text class="legend" x="640" y="688">• Agent 通过 ID 引用 Skill[] 和 MCP Tunnel —— 多 Agent 可共享</text>
+  <text class="legend" x="640" y="710">• Session 把所有 Definition 资源在运行时绑定，并挂载 File / MemoryStore</text>
+  <text class="legend" x="640" y="732">• Vault 在 Session 中按 ID 匹配对应 MCP server 的凭据</text>
+
+  <!-- ========== Edges from Definition / Cross-cutting → Session ========== -->
+  <!-- Channel: vertical edges live in y=370..420 corridor, all enter top of Session box (y=480) at x in [150..490]
+       Session top center is (310, 480). Spread entry points along top edge. -->
+
+  <!-- Agent → Session: ref, enters at x=160 -->
+  <path class="edge-ref" d="M180 206 L180 400 L160 400 L160 480"/>
+  <rect class="elabel-bg" x="110" y="392" width="140" height="16"/>
+  <text class="elabel" x="180" y="404" text-anchor="middle">引用 Agent (+version)</text>
+
+  <!-- Environment → Session: ref, enters at x=230 -->
+  <path class="edge-ref" d="M180 336 L180 380 L230 380 L230 480"/>
+  <rect class="elabel-bg" x="180" y="372" width="110" height="16"/>
+  <text class="elabel" x="235" y="384" text-anchor="middle">引用 Environment</text>
+
+  <!-- Vault → Session: ref, enters at x=310 -->
+  <path class="edge-ref" d="M440 336 L440 390 L310 390 L310 480"/>
+  <rect class="elabel-bg" x="320" y="382" width="100" height="16"/>
+  <text class="elabel" x="370" y="394" text-anchor="middle">引用 vault_ids[]</text>
+
+  <!-- File → Session: mount, enters at x=400 -->
+  <path class="edge-mount" d="M840 206 L840 400 L400 400 L400 480"/>
+  <rect class="elabel-bg" x="430" y="392" width="70" height="16"/>
+  <text class="elabel" x="465" y="404" text-anchor="middle">挂载 File</text>
+
+  <!-- MemoryStore → Session: mount, enters at x=480 -->
+  <path class="edge-mount" d="M960 336 L960 410 L480 410 L480 480"/>
+  <rect class="elabel-bg" x="510" y="402" width="120" height="16"/>
+  <text class="elabel" x="570" y="414" text-anchor="middle">挂载 MemoryStore</text>
+</svg>

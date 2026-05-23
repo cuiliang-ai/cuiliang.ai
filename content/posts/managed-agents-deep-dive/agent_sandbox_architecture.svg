@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="860" viewBox="0 0 1280 860" role="img" aria-labelledby="title desc">
+  <title id="title">Self-hosted Sandbox Implementation Architecture</title>
+  <desc id="desc">Architecture diagram showing Anthropic control plane, customer infrastructure, self-hosted sandbox runtime, worker poller, EnvironmentWorker, tool runner, toolset, filesystem, and network.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#333333" />
+    </marker>
+    <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#2364aa" />
+    </marker>
+    <marker id="arrow-green" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#2f7d4f" />
+    </marker>
+    <style>
+      .bg { fill: #fbfaf7; }
+      .zone { fill: #ffffff; stroke-width: 2; rx: 12; }
+      .anthropic { stroke: #7a5c35; fill: #fff7ec; }
+      .customer { stroke: #2f6f5e; fill: #f1faf6; }
+      .runtime { stroke: #2364aa; fill: #eef6ff; }
+      .box { fill: #ffffff; stroke: #333333; stroke-width: 1.6; rx: 8; }
+      .box-strong { fill: #fffdfa; stroke: #141413; stroke-width: 2; rx: 8; }
+      .box-blue { fill: #f6fbff; stroke: #2364aa; stroke-width: 1.7; rx: 8; }
+      .box-green { fill: #f7fff9; stroke: #2f7d4f; stroke-width: 1.7; rx: 8; }
+      .store { fill: #fff; stroke: #333333; stroke-width: 1.6; }
+      .title { font: 700 24px Arial, Helvetica, sans-serif; fill: #141413; }
+      .zone-title { font: 700 18px Arial, Helvetica, sans-serif; fill: #141413; }
+      .label { font: 600 15px Arial, Helvetica, sans-serif; fill: #141413; }
+      .small { font: 13px Arial, Helvetica, sans-serif; fill: #3f3f3a; }
+      .tiny { font: 12px Arial, Helvetica, sans-serif; fill: #565650; }
+      .arrow { stroke: #333333; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+      .arrow-blue { stroke: #2364aa; stroke-width: 2.2; fill: none; marker-end: url(#arrow-blue); }
+      .arrow-green { stroke: #2f7d4f; stroke-width: 2.2; fill: none; marker-end: url(#arrow-green); }
+      .dash { stroke-dasharray: 7 6; }
+      .note { fill: #fffaf0; stroke: #b78b42; stroke-width: 1.4; rx: 8; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1280" height="860" />
+  <text class="title" x="48" y="48">Self-hosted Sandbox Implementation Architecture</text>
+  <text class="small" x="48" y="74">Anthropic keeps the brain/harness loop; the customer-side sandbox runs the tool execution runtime.</text>
+
+  <rect class="zone anthropic" x="48" y="112" width="1184" height="250" rx="14" />
+  <text class="zone-title" x="72" y="145">Anthropic Control Plane</text>
+
+  <rect class="box-strong" x="94" y="180" width="210" height="92" rx="8" />
+  <text class="label" x="124" y="214">Harness / Brain Loop</text>
+  <text class="tiny" x="124" y="238">context, policy, recovery</text>
+
+  <rect class="box" x="398" y="180" width="210" height="92" rx="8" />
+  <text class="label" x="446" y="214">Claude Model</text>
+  <text class="tiny" x="438" y="238">inference and tool_use</text>
+
+  <path class="store" d="M704 188 C704 176 920 176 920 188 L920 264 C920 276 704 276 704 264 Z" />
+  <path class="store" d="M704 188 C704 200 920 200 920 188" fill="none" />
+  <text class="label" x="746" y="224">Session Event Log</text>
+  <text class="tiny" x="748" y="248">durable session state</text>
+
+  <rect class="box" x="998" y="180" width="184" height="92" rx="8" />
+  <text class="label" x="1036" y="214">Work Queue</text>
+  <text class="tiny" x="1028" y="238">session work items</text>
+
+  <path class="arrow" d="M304 226 L398 226" />
+  <path class="arrow" d="M608 226 L704 226" />
+  <path class="arrow" d="M920 226 L998 226" />
+  <path class="arrow dash" d="M503 180 C503 138 199 138 199 180" />
+  <text class="tiny" x="324" y="133">model loop</text>
+
+  <rect class="zone customer" x="48" y="410" width="1184" height="398" rx="14" />
+  <text class="zone-title" x="72" y="443">Customer Infrastructure</text>
+
+  <rect class="box-green" x="94" y="488" width="210" height="92" rx="8" />
+  <text class="label" x="132" y="520">Worker Poller</text>
+  <text class="tiny" x="122" y="544">work.poller() / CLI poll</text>
+
+  <rect class="box-green" x="370" y="488" width="214" height="92" rx="8" />
+  <text class="label" x="414" y="520">EnvironmentWorker</text>
+  <text class="tiny" x="404" y="544">ack, heartbeat, stop</text>
+
+  <rect class="box-green" x="652" y="488" width="214" height="92" rx="8" />
+  <text class="label" x="696" y="520">Per-session Launcher</text>
+  <text class="tiny" x="690" y="544">process or container</text>
+
+  <rect class="zone runtime" x="310" y="626" width="850" height="144" rx="14" />
+  <text class="zone-title" x="334" y="656">Self-hosted Sandbox Runtime</text>
+
+  <rect class="box-blue" x="344" y="686" width="170" height="58" rx="8" />
+  <text class="label" x="380" y="710">tool_runner()</text>
+  <text class="tiny" x="374" y="730">tool-call loop</text>
+
+  <rect class="box-blue" x="560" y="686" width="180" height="58" rx="8" />
+  <text class="label" x="584" y="710">AgentToolContext</text>
+  <text class="tiny" x="588" y="730">workdir, policy, skills</text>
+
+  <rect class="box-blue" x="786" y="672" width="158" height="86" rx="8" />
+  <text class="label" x="832" y="698">Toolset</text>
+  <text class="tiny" x="812" y="720">bash / read / write</text>
+  <text class="tiny" x="824" y="738">edit / glob / grep</text>
+
+  <rect class="box-blue" x="982" y="672" width="140" height="86" rx="8" />
+  <text class="label" x="1010" y="698">Resources</text>
+  <text class="tiny" x="1000" y="720">filesystem</text>
+  <text class="tiny" x="1000" y="738">internal network</text>
+
+  <path class="arrow-green" d="M1182 272 C1182 370 199 370 199 488" />
+  <text class="tiny" x="890" y="388">session work item: data.type = session</text>
+
+  <path class="arrow-green" d="M304 534 L370 534" />
+  <path class="arrow-green" d="M584 534 L652 534" />
+  <path class="arrow-green" d="M759 580 L759 626" />
+
+  <path class="arrow-blue" d="M514 715 L560 715" />
+  <path class="arrow-blue" d="M740 715 L786 715" />
+  <path class="arrow-blue" d="M944 715 L982 715" />
+
+  <path class="arrow-blue" d="M94 272 C64 420 334 420 344 700" />
+  <text class="tiny" x="76" y="392">tool execution request</text>
+  <text class="tiny" x="76" y="410">execute(name, input)</text>
+
+  <path class="arrow-blue dash" d="M344 730 C240 790 96 650 94 272" />
+  <text class="tiny" x="110" y="792">tool_result / stdout / error</text>
+
+  <rect class="note" x="926" y="486" width="242" height="90" rx="8" />
+  <text class="label" x="950" y="516">Key Boundary</text>
+  <text class="tiny" x="950" y="540">No full harness in sandbox.</text>
+  <text class="tiny" x="950" y="560">Only tool execution runtime.</text>
+
+  <text class="small" x="48" y="838">Public REST boundary: environment work queue. Per-tool execution is exposed through SDK/CLI worker helpers such as EnvironmentWorker and tool_runner().</text>
+</svg>
