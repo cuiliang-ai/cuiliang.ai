@@ -10,6 +10,7 @@
 - [用寓言讲 AI 工程系列](https://cuiliang.ai/series/): 用木匠铺寓言讲 Agent 四层工程与 context 腐烂，已多篇。
 - [Anthropic Harness Engineering 实践分析](https://cuiliang.ai/posts/anthropic-harness-engineering/): 四条 Agent 控制原则。
 - [Managed Agents 架构学习笔记](https://cuiliang.ai/posts/managed-agents-deep-dive/): Anthropic Managed Agents 六层架构拆解。
+- [Mixture of Agents 与 Hermes 的工程实现](https://cuiliang.ai/posts/mixture-of-agents-hermes-engineering/): 借 Hermes 讲清 MoA 如何封装成 provider 抽象——三个工程不变量（执行权唯一、会话历史不变、缓存前缀不变）、随迭代轮数线性增长的成本结构与五类生产 failure modes。
 - [HITL 系列](https://cuiliang.ai/series/): Human-in-the-loop、Agent 框架对比五篇 + 番外。
 - [Prompt Caching 系列](https://cuiliang.ai/series/): KV cache 原理与 context engineering 四篇。
 
