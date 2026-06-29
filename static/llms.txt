@@ -1,9 +1,9 @@
 # CuiLiang.ai — 崔亮 Cui Liang 的 AI Agent 工程博客
 
-> 崔亮（Cui Liang）的技术博客，专注 AI Agent 工程与基础设施。作者是微软 Principal Software Manager，前阿里云 Senior Staff Engineer，全职做 AI Agent infrastructure。内容为生产可落地的工程实践：Context Engineering、Multi-Agent Orchestration、Agent Runtime、Harness Engineering、Computer Use Agent、Claude Code、Codex CLI。中文为主。
+> 崔亮（Cui Liang）的技术博客，专注 AI Agent 工程与基础设施。作者是微软 Principal Software Manager，前阿里云 Senior Staff Engineer，全职做 AI Agent infrastructure。内容为生产可落地的工程实践：Context Engineering、Multi-Agent Orchestration、Agent Runtime、Harness Engineering、Human-in-the-loop、Prompt Caching、Computer Use Agent、Claude Code、Codex CLI。中文为主，少量英文精选。
 
 ## About the author
-- [About / 关于崔亮](https://cuiliang.ai/about/): Cui Liang — Principal Software Manager @ Microsoft, ex-Senior Staff Engineer @ Alibaba Cloud, working on AI Agent infrastructure.
+- [About / 关于崔亮](https://cuiliang.ai/about/): Cui Liang — Principal Software Manager @ Microsoft, ex-Senior Staff Engineer @ Alibaba Cloud, working on AI Agent infrastructure. GitHub: cuiliang-ai。
 
 ## Core writing
 - [AI Agent 工程地图：从 Prompt 到 Outcome](https://cuiliang.ai/posts/prompt-to-outcome-agent-engineering-map/): 两根轴（构造轴 Prompt→Context→Harness、反馈环轴 Loop→Eval→AgentOps→Outcome）+ 四条反馈路径的 Agent 工程全景框架。
@@ -11,10 +11,17 @@
 - [Anthropic Harness Engineering 实践分析](https://cuiliang.ai/posts/anthropic-harness-engineering/): 四条 Agent 控制原则。
 - [Managed Agents 架构学习笔记](https://cuiliang.ai/posts/managed-agents-deep-dive/): Anthropic Managed Agents 六层架构拆解。
 - [HITL 系列](https://cuiliang.ai/series/): Human-in-the-loop、Agent 框架对比五篇 + 番外。
-- [Prompt Caching 系列](https://cuiliang.ai/series/): KV cache 原理与 context engineering。
+- [Prompt Caching 系列](https://cuiliang.ai/series/): KV cache 原理与 context engineering 四篇。
 
 ## Deep-dive books
-- [Claude Code / Codex CLI / Hermes 源码深度解析](https://cuiliang.ai/books/): 4 本基于源码的 Agent 架构深度书。
+- [Advanced Claude Code Deep Dive](https://book.cuiliang.ai/advanced-claude-code-deep-dive/): 基于 Claude Code 原始 TypeScript 源码的架构深度解析，直面真实代码。
+- [Claude Code Deep Dive](https://book.cuiliang.ai/claude-code-deep-dive/): Claude Code v2.1.86 架构深度解析，逐层拆解核心机制。
+- [Codex CLI Deep Dive](https://book.cuiliang.ai/codex-deep-dive/): OpenAI Codex CLI 源码深度解析，Rust+TypeScript 混合架构。
+- [Hermes Agent Deep Dive](https://book.cuiliang.ai/hermes-agent-deep-dive/): Nous Research 自进化 AI Agent 源码解析，Agentic Loop 与学习闭环。
+- [全部书目](https://cuiliang.ai/books/): 4 本基于源码的 Agent 架构深度书。
 
 ## Archives
 - [全部文章归档](https://cuiliang.ai/archives/)
+- [English articles](https://cuiliang.ai/en/posts/code-agent-era-observations/): selected English articles on AI Agent engineering.
+
+Last updated: 2026-06-29

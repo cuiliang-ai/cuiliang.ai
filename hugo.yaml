@@ -2,7 +2,7 @@ baseURL: "https://cuiliang.ai/"
 title: "CuiLiang.ai"
 theme: "PaperMod"
 hasCJKLanguage: true
-enableRobotsTXT: true
+enableRobotsTXT: false  # using static/robots.txt with explicit AI-crawler allowlist
 defaultContentLanguage: zh
 defaultContentLanguageInSubdir: false
 
