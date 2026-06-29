@@ -52,14 +52,10 @@ languages:
           name: Archives
           url: https://cuiliang.ai/archives/
           weight: 5
-        - identifier: guestbook
-          name: Guestbook
-          url: https://cuiliang.ai/guestbook/
-          weight: 6
         - identifier: about
           name: About
           url: https://cuiliang.ai/about/
-          weight: 7
+          weight: 6
 
 taxonomies:
   tag: tags
@@ -147,14 +143,10 @@ menu:
       name: Archives
       url: /archives/
       weight: 5
-    - identifier: guestbook
-      name: Guestbook
-      url: /guestbook/
-      weight: 6
     - identifier: about
       name: About
       url: /about/
-      weight: 7
+      weight: 6
 
 markup:
   goldmark:
