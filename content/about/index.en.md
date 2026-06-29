@@ -1,5 +1,5 @@
 ---
-title: "Cui Liang — AI Agent Engineer @ Microsoft"
+title: "Cui Liang — AI Agent Engineer"
 layout: "single"
 url: "/en/about/"
 summary: "Cui Liang, Principal Software Manager at Microsoft, working full-time on AI Agent infrastructure. Focus: Computer Use Agents, Multi-Agent Orchestration, Context Engineering, Agent Runtime."

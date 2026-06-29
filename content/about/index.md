@@ -1,5 +1,5 @@
 ---
-title: "崔亮 Cui Liang — AI Agent 工程师 @ Microsoft"
+title: "崔亮 Cui Liang — AI Agent 工程师"
 layout: "single"
 url: "/about/"
 summary: "崔亮，微软 Principal Software Manager，全职做 AI Agent 基础设施。专注 Computer Use Agent、Multi-Agent Orchestration、Context Engineering 与 Agent Runtime。"
