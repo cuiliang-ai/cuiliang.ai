@@ -16,7 +16,7 @@ languages:
       homeInfoParams:
         Title: "崔亮 Cui Liang 的 AI Agent 工程笔记"
         Content: |
-          我是崔亮（Cui Liang），微软 Principal Software Manager，前阿里云 Senior Staff Engineer。这里主要记录我对 AI Agent 工程、Context Engineering、Agent Runtime、Multi-Agent Orchestration 和工程实践的长期思考。
+          这里主要记录我对 AI Agent 工程、Context Engineering、Agent Runtime、Multi-Agent Orchestration 和工程实践的长期思考。
   en:
     languageName: "English"
     languageCode: "en"
