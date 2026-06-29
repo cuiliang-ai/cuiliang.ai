@@ -22,6 +22,6 @@ I also run a Chinese WeChat account **「CuiLiang.ai」** — where I publish mo
 
 > Grab a coffee — let's talk about big data and AI. Tech-savvy, life-savvy; informed and unflappable.
 
-![CuiLiang.ai WeChat QR code](qrcode_for_gh_0e79cc6ff141_258.jpg)
+![CuiLiang.ai WeChat QR code](qrcode.jpg)
 
 For anything else: [cuiliang05@gmail.com](mailto:cuiliang05@gmail.com).
