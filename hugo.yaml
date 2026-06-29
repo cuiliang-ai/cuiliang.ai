@@ -15,6 +15,36 @@ languages:
     languageName: "English"
     languageCode: "en"
     weight: 2
+    menu:
+      main:
+        - identifier: series
+          name: Series
+          url: https://cuiliang.ai/series/
+          weight: 1
+        - identifier: skills
+          name: Skills
+          url: https://cuiliang.ai/skills/
+          weight: 2
+        - identifier: books
+          name: Books
+          url: https://cuiliang.ai/books/
+          weight: 3
+        - identifier: notes
+          name: Notes
+          url: https://cuiliang.ai/notes/
+          weight: 4
+        - identifier: archives
+          name: Archives
+          url: https://cuiliang.ai/archives/
+          weight: 5
+        - identifier: guestbook
+          name: Guestbook
+          url: https://cuiliang.ai/guestbook/
+          weight: 6
+        - identifier: about
+          name: About
+          url: https://cuiliang.ai/about/
+          weight: 7
 
 taxonomies:
   tag: tags
