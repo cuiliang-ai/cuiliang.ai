@@ -50,7 +50,7 @@ languages:
           weight: 4
         - identifier: about
           name: About
-          url: https://cuiliang.ai/about/
+          url: https://cuiliang.ai/en/about/
           weight: 5
 
 taxonomies:
