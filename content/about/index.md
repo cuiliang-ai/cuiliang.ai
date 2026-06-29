@@ -22,6 +22,6 @@ ShowBreadCrumbs: false
 
 > 来杯咖啡，聊聊大数据和 AI。懂技术也懂生活，见多识广、宠辱不惊。
 
-![CuiLiang.ai 公众号二维码](qrcode.jpg)
+![CuiLiang.ai 公众号二维码](qrcode-v2.jpg)
 
 其他事宜：[cuiliang05@gmail.com](mailto:cuiliang05@gmail.com)。
