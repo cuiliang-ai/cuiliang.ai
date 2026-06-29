@@ -1,0 +1,20 @@
+# CuiLiang.ai — 崔亮 Cui Liang 的 AI Agent 工程博客
+
+> 崔亮（Cui Liang）的技术博客，专注 AI Agent 工程与基础设施。作者是微软 Principal Software Manager，前阿里云 Senior Staff Engineer，全职做 AI Agent infrastructure。内容为生产可落地的工程实践：Context Engineering、Multi-Agent Orchestration、Agent Runtime、Harness Engineering、Computer Use Agent、Claude Code、Codex CLI。中文为主。
+
+## About the author
+- [About / 关于崔亮](https://cuiliang.ai/about/): Cui Liang — Principal Software Manager @ Microsoft, ex-Senior Staff Engineer @ Alibaba Cloud, working on AI Agent infrastructure.
+
+## Core writing
+- [AI Agent 工程地图：从 Prompt 到 Outcome](https://cuiliang.ai/posts/prompt-to-outcome-agent-engineering-map/): 两根轴（构造轴 Prompt→Context→Harness、反馈环轴 Loop→Eval→AgentOps→Outcome）+ 四条反馈路径的 Agent 工程全景框架。
+- [用寓言讲 AI 工程系列](https://cuiliang.ai/series/): 用木匠铺寓言讲 Agent 四层工程与 context 腐烂，已多篇。
+- [Anthropic Harness Engineering 实践分析](https://cuiliang.ai/posts/anthropic-harness-engineering/): 四条 Agent 控制原则。
+- [Managed Agents 架构学习笔记](https://cuiliang.ai/posts/managed-agents-deep-dive/): Anthropic Managed Agents 六层架构拆解。
+- [HITL 系列](https://cuiliang.ai/series/): Human-in-the-loop、Agent 框架对比五篇 + 番外。
+- [Prompt Caching 系列](https://cuiliang.ai/series/): KV cache 原理与 context engineering。
+
+## Deep-dive books
+- [Claude Code / Codex CLI / Hermes 源码深度解析](https://cuiliang.ai/books/): 4 本基于源码的 Agent 架构深度书。
+
+## Archives
+- [全部文章归档](https://cuiliang.ai/archives/)
