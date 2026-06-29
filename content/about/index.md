@@ -1,27 +1,27 @@
 ---
-title: "About"
+title: "关于"
 layout: "single"
 url: "/about/"
-summary: "About Cui Liang"
+summary: "关于崔亮"
 ShowReadingTime: false
 ShowWordCount: false
 ShowBreadCrumbs: false
 ---
 
-## Hi, I'm Cui Liang
+## 你好，我是崔亮
 
-Principal Software Manager at **Microsoft**, formerly Senior Staff Engineer at **Alibaba Cloud**. 10+ years in distributed systems and big data architecture, now working full-time on **AI Agent infrastructure**.
+微软 **Principal Software Manager**，前阿里云 **Senior Staff Engineer**。十多年分布式系统与大数据架构经验，现在全职做 **AI Agent 基础设施**。
 
-I'm not an ML researcher. What I care about is how agents are built, deployed, and kept running in production — Computer Use Agents, Multi-Agent Orchestration, Context Engineering.
+我不是机器学习研究员。我关心的是 Agent 怎么被构建、部署、并在生产环境里持续跑下去——Computer Use Agent、Multi-Agent Orchestration、Context Engineering。
 
-This blog is a practitioner's notebook: architectural choices that actually ship, toolchain lessons learned the hard way, and the infrastructure pain points everyone hits but few people write down.
+这个博客是一本工程师的笔记：真正能上线的架构取舍、踩过坑才学到的工具链经验，以及那些人人都会遇到、却很少有人写下来的基础设施痛点。
 
-## Elsewhere & contact
+## 别处与联系
 
-I also run a Chinese WeChat account **「CuiLiang.ai」** — where I publish most frequently in Chinese.
+我也运营一个微信公众号 **「CuiLiang.ai」**——大部分中文内容首发在那里。
 
-> Grab a coffee — let's talk about big data and AI. Tech-savvy, life-savvy; informed and unflappable.
+> 来杯咖啡，聊聊大数据和 AI。懂技术也懂生活，见多识广、宠辱不惊。
 
-![CuiLiang.ai WeChat QR code](qrcode.jpg)
+![CuiLiang.ai 公众号二维码](qrcode.jpg)
 
-For anything else: [cuiliang05@gmail.com](mailto:cuiliang05@gmail.com).
+其他事宜：[cuiliang05@gmail.com](mailto:cuiliang05@gmail.com)。
