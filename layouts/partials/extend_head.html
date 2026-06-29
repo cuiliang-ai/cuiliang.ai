@@ -10,3 +10,10 @@
 
 {{- /* Busuanzi page view counter */ -}}
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+{{- /* hreflang x-default → Chinese (default) version; PaperMod emits zh/en alternates but not x-default */ -}}
+{{- if .IsTranslated }}
+  {{- range .AllTranslations }}{{ if eq .Lang "zh" }}<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">{{ end }}{{ end }}
+{{- else if eq .Lang "zh" }}
+<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
+{{- end }}

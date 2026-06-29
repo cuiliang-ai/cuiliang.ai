@@ -11,10 +11,25 @@ languages:
     languageName: "中文"
     languageCode: "zh"
     weight: 1
+    title: "崔亮 Cui Liang｜AI Agent 工程博客"
+    params:
+      homeInfoParams:
+        Title: "崔亮 Cui Liang 的 AI Agent 工程笔记"
+        Content: |
+          我是崔亮（Cui Liang），微软 Principal Software Manager，前阿里云 Senior Staff Engineer。这里主要记录我对 AI Agent 工程、Context Engineering、Agent Runtime、Multi-Agent Orchestration 和工程实践的长期思考。
   en:
     languageName: "English"
     languageCode: "en"
     weight: 2
+    title: "English Articles by Cui Liang｜CuiLiang.ai"
+    params:
+      description: "Selected English articles by Cui Liang on AI Agent engineering, code agents, agent runtime, and software infrastructure. The main site is published primarily in Chinese."
+      homeInfoParams:
+        Title: "English Articles by Cui Liang"
+        Content: |
+          This section contains selected English articles by Cui Liang. The main CuiLiang.ai blog is primarily published in Chinese.
+
+          [中文主站：崔亮 Cui Liang 的 AI Agent 工程博客](https://cuiliang.ai/)
     menu:
       main:
         - identifier: series
@@ -67,8 +82,8 @@ minify:
 
 params:
   env: production
-  title: "CuiLiang.ai"
-  description: "AI Agent Engineering in Practice"
+  title: "崔亮 Cui Liang｜AI Agent 工程博客"
+  description: "崔亮（Cui Liang）的技术博客，记录 AI Agent 工程、Context Engineering、Multi-Agent Orchestration、Agent Runtime、Claude Code、Codex CLI 与工程实践。"
   keywords: [AI Agent, CUA, MCP, LLM, Computer Use Agent]
   images: ["/og-default.png"]
   author: "Cui Liang"
