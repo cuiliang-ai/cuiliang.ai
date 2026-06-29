@@ -17,3 +17,24 @@
 {{- else if eq .Lang "zh" }}
 <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
 {{- end }}
+
+{{- /* Person entity for search engines + LLMs: ties "Cui Liang / 崔亮" across the web to one identity */ -}}
+{{- if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Cui Liang",
+  "alternateName": "崔亮",
+  "url": "https://cuiliang.ai/",
+  "jobTitle": "Principal Software Manager",
+  "worksFor": { "@type": "Organization", "name": "Microsoft" },
+  "knowsAbout": ["AI Agent Engineering", "AI Agent Infrastructure", "Context Engineering", "Multi-Agent Orchestration", "Computer Use Agent", "Claude Code", "Codex CLI"],
+  "description": "Cui Liang (崔亮) is a Principal Software Manager at Microsoft working full-time on AI Agent infrastructure, formerly Senior Staff Engineer at Alibaba Cloud. Author of deep-dive books on Claude Code and Codex CLI.",
+  "sameAs": [
+    "https://github.com/cuiliang-ai",
+    "https://book.cuiliang.ai/"
+  ]
+}
+</script>
+{{- end }}
