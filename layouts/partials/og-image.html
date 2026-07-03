@@ -1,0 +1,85 @@
+{{- /*
+  og-image.html — 构建期为单页生成一张深色品牌 OG 图（1200×630）。
+  入参 . 为 page。返回值：生成图的 RelPermalink（通过 return）。
+  纯深色底（og-bg-seed.png 放大）+ 标题大字（手动 CJK 切行）+ 底部品牌页脚。
+*/ -}}
+{{- $title := .Title | plainify -}}
+{{- $font := resources.Get "fonts/NotoSansSC-Bold-subset.ttf" -}}
+{{- $bg := resources.Get "images/og-bg-seed.png" -}}
+
+{{- /* 深色画布：把 4×4 深色底放大到 1200×630 */ -}}
+{{- $canvas := $bg.Resize "1200x630 png" -}}
+
+{{- /* --- 标题按“显示宽度”手动切行 ---
+       CJK 记 2 个半宽单位，ASCII/拉丁记 1 个。每行预算 26 半宽（≈13 汉字 / ≈26 拉丁），
+       最多 4 行，超出则末行截断加省略号。逐字累加，避免把英文单词从中间切断太随意。 */ -}}
+{{- $budget := 26 -}}
+{{- $maxLines := 4 -}}
+{{- $runes := split $title "" -}}
+{{- $lines := slice -}}
+{{- $cur := "" -}}
+{{- $curW := 0 -}}
+{{- $truncated := false -}}
+{{- range $r := $runes -}}
+  {{- if not $truncated -}}
+    {{- $w := cond (gt (len $r) 1) 2 1 -}}{{- /* 多字节=CJK/全角=2，单字节=1 */ -}}
+    {{- if gt (add $curW $w) $budget -}}
+      {{- /* 换行 */ -}}
+      {{- if lt (len $lines) $maxLines -}}
+        {{- $lines = $lines | append $cur -}}
+      {{- end -}}
+      {{- if ge (len $lines) $maxLines -}}
+        {{- $truncated = true -}}
+      {{- else -}}
+        {{- $cur = $r -}}{{- $curW = $w -}}
+      {{- end -}}
+    {{- else -}}
+      {{- $cur = printf "%s%s" $cur $r -}}{{- $curW = add $curW $w -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- /* 收尾：把最后一行（若还没满 maxLines）放进去 */ -}}
+{{- if and (not $truncated) (lt (len $lines) $maxLines) (gt (len $cur) 0) -}}
+  {{- $lines = $lines | append $cur -}}
+{{- end -}}
+{{- /* 若发生截断，给末行加省略号 */ -}}
+{{- if $truncated -}}
+  {{- $last := index $lines (sub (len $lines) 1) -}}
+  {{- $last = printf "%s…" $last -}}
+  {{- $lines = first (sub (len $lines) 1) $lines -}}
+  {{- $lines = $lines | append $last -}}
+{{- end -}}
+{{- $wrapped := delimit $lines "\n" -}}
+
+{{- /* --- 叠标题：垂直居中，浅色大字 --- */ -}}
+{{- $lineCount := len $lines -}}
+{{- $titleSize := 60 -}}
+{{- $lineGap := 18 -}}
+{{- $blockH := sub (mul $lineCount (add $titleSize $lineGap)) $lineGap -}}
+{{- $titleY := sub (div 630 2) (div $blockH 2) -}}
+{{- $titleOpts := dict
+    "font" $font
+    "size" $titleSize
+    "color" "#fbfaf5"
+    "linespacing" $lineGap
+    "alignx" "center"
+    "x" 600
+    "y" $titleY
+-}}
+
+{{- /* --- 叠品牌页脚：底部居中，次要色 --- */ -}}
+{{- $footOpts := dict
+    "font" $font
+    "size" 30
+    "color" "#8b8d92"
+    "alignx" "center"
+    "x" 600
+    "y" 548
+-}}
+
+{{- $out := $canvas.Filter
+    (images.Text $wrapped $titleOpts)
+    (images.Text "cuiliang.ai · 崔亮 Cui Liang" $footOpts)
+-}}
+
+{{- return $out.RelPermalink -}}
