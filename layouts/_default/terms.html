@@ -1,0 +1,82 @@
+{{- define "main" }}
+
+{{- if .Title }}
+<header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description">
+        {{ .Description | markdownify }}
+    </div>
+    {{- end }}
+</header>
+{{- end }}
+
+{{- if eq .Type "series" }}
+{{- /* 富渲染：系列专题总览（按内容页 weight 排序，含中文名 + 篇数 + 状态徽章 + 描述） */ -}}
+<style>
+    .series-list { list-style: none; margin: 20px 0 0; padding: 0; }
+    .series-card {
+        display: block; padding: 18px 20px; margin-bottom: 16px;
+        border: 1px solid var(--border); border-radius: var(--radius);
+        background: var(--entry); transition: transform 0.1s ease;
+    }
+    .series-card:hover { transform: translateY(-2px); }
+    .series-card__head { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 6px; }
+    .series-card__title { font-size: 20px; font-weight: 600; color: var(--primary); margin: 0; }
+    .series-card__count { font-size: 14px; color: var(--secondary); }
+    .series-badge {
+        font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 999px;
+        line-height: 1.6; white-space: nowrap;
+    }
+    .series-badge--complete { background: rgba(80, 250, 123, 0.15); color: #2ea043; }
+    .series-badge--ongoing  { background: rgba(255, 184, 108, 0.18); color: #d97706; }
+    .series-card__desc { font-size: 15px; color: var(--content); margin: 0; line-height: 1.6; }
+</style>
+
+{{- $seriesPages := slice }}
+{{- range $name, $taxonomy := .Data.Terms }}
+    {{- with site.GetPage (printf "/series/%s" $name) }}
+        {{- $seriesPages = $seriesPages | append (dict "page" . "count" (len $taxonomy)) }}
+    {{- end }}
+{{- end }}
+
+<ul class="series-list">
+    {{- range sort $seriesPages "page.Weight" "asc" }}
+    {{- $p := .page }}
+    <li>
+        <a class="series-card" href="{{ $p.Permalink }}">
+            <div class="series-card__head">
+                <span class="series-card__title">{{ $p.Title }}</span>
+                <span class="series-card__count">{{ .count }} 篇</span>
+                {{- $status := $p.Params.status }}
+                {{- if eq $status "complete" }}
+                <span class="series-badge series-badge--complete">完整系列</span>
+                {{- else if eq $status "ongoing" }}
+                <span class="series-badge series-badge--ongoing">更新中</span>
+                {{- end }}
+            </div>
+            {{- with $p.Description }}
+            <p class="series-card__desc">{{ . }}</p>
+            {{- end }}
+        </a>
+    </li>
+    {{- end }}
+</ul>
+
+{{- else }}
+{{- /* 其它 taxonomy（tags / categories）回退到 PaperMod 原始渲染 */ -}}
+<ul class="terms-tags">
+    {{- $type := .Type }}
+    {{- range $key, $value := .Data.Terms.Alphabetical }}
+    {{- $name := .Name }}
+    {{- $count := .Count }}
+    {{- with site.GetPage (printf "/%s/%s" $type $name) }}
+    <li>
+        <a href="{{ .Permalink }}">{{ .Name }} <sup><strong><sup>{{ $count }}</sup></strong></sup> </a>
+    </li>
+    {{- end }}
+    {{- end }}
+</ul>
+{{- end }}
+
+{{- end }}{{/* end main */ -}}

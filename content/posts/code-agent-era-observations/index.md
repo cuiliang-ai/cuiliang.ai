@@ -6,7 +6,6 @@ summary: "经验贬值的非对称性、成长路径的梯子断裂、精英化�
 description: "经验贬值的非对称性、成长路径的梯子断裂、精英化悖论、工程严谨性危机——基于团队实践的四个观察。"
 tags: ["Code Agent", "Vibe Coding", "Software Engineering", "AI"]
 categories: ["AI Agent Engineering"]
-series: ["Bilingual"]
 ShowToc: true
 TocOpen: true
 ---
