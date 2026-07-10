@@ -164,7 +164,47 @@ Codex 的内置模型目录（`models.json`）把 `gpt-5.6-sol` / `gpt-5.6-terra
 
 ---
 
-## 五、解决方案
+## 五、这个改动想干什么：动机与目的分析
+
+机制清楚了，但还剩一个问题：为什么非要把工具从顶层参数挪进 input？单是换个位置，犯不上专门起一条 lite 路径、还配个内部 header。这一节是我让 agent 通读 openai/codex 源码和相关 issue 后整理出的分析，按证据强度分三层——能在源码里核对的算事实，剩下的是推断，会标出来。
+
+### 5.1 事实层：Lite 是一整套契约，工具封装只是其中一项
+
+细读 `client.rs`[^src-client]、`spec_plan.rs`[^src-specplan] 和测试文件 `responses_lite.rs`[^src-test]，lite 路径做的事远不止改工具封装：
+
+| 职责 | 标准路径 | Lite 路径 |
+| --- | --- | --- |
+| hosted 工具（web_search / image_generation） | 服务端执行 | 剔除，替换为客户端执行的 `web.run` / `image_gen.imagegen` |
+| 远程图片 URL | 服务端抓取处理 | 服务端拒收，客户端下载、缩放、base64 内联 |
+| tools / instructions | 请求参数，服务端渲染进前缀 | 客户端预渲染为 input 流中的 item |
+| 并行工具调用 | 服务端调度 | 禁用 |
+| 跨轮 reasoning | 默认 `current_turn`，每轮重组 | 强制 `all_turns`，全轮保留 |
+
+上面这些字段（`web.run`、`image_gen`、`all_turns` / `current_turn`）在 `codex.exe` 里都能 grep 到，可自行核对。Azure 的报错文案（"only supports function tools, custom tools, and client-executed tool search"）是服务端契约校验的直接证据[^iss-31882]。
+
+这张表看完，"Lite" 修饰的是谁就清楚了：服务端。能搬到客户端的编排全部搬走之后，服务端剩下的只有接收一条有序 item 序列、按固定规则拼成 token、推理、流式返回，没有外部调用，没有需要"决定"的事。
+
+### 5.2 推断层：append-only 的 prompt 与增量 prefill
+
+> 本小节是机制推断，无官方文档背书。
+
+服务端瘦身能省一些路径开销，但单凭这点撑不起一次协议重构。真正的收益我推断在缓存上。Coding agent 每轮把全量历史重发一遍，几十万 token 的上下文里 prefill 成本占大头。标准路径下有两个东西破坏前缀稳定性：一是 tools / instructions 作为参数由服务端每轮重新渲染插入前缀，客户端不掌控字节级布局；二是 `current_turn` 策略下上一轮 reasoning 不保留，第 N 轮的 prompt 无法成为第 N-1 轮的严格前缀扩展。
+
+Lite 把两个变量同时消掉：全部内容统一为客户端控制顺序的 item 流，reasoning 全轮保留，于是每轮 prompt 等于上一轮加一段新后缀。配合源码里同步出现的 WebSocket 持久传输（二进制里的 `responses_websockets` 标记，lite 标志同时写入 WS metadata），服务端每轮只需 prefill 增量部分。item 流化、all_turns、WS 传输三件事在同一套改动里共现，很难有别的解释。工具 item 化是这个方案的必要前提：只要 tools 还留在顶层参数，它就永远是服务端每轮要重新规范化的游离态。
+
+另一层推断关于模型本身。三个 5.6 模型同时标记 `tool_mode: code_mode_only` 和 `multi_agent_version: v2`，后者对应服务端保留的 `collaboration` 加密工具命名空间（Azure 的第二个报错）。这代模型的 harness 很可能就是围绕这套契约训练的，`additional_tools` 作为 developer item 或许正是训练时工具声明的原生渲染格式。协议在跟着模型的训练格式走。
+
+### 5.3 判定层：第三方被破坏更像副作用
+
+契约变更是双边的：发送端改格式，接收端要同步理解。这次发送端的切换按模型 slug 无条件生效，`client.rs` 里没有任何代码在发送前询问当前 provider 是谁；接收端却只有 OpenAI 自己的后端升级了。header 名字里的 `Internal` 已经自我声明了适用范围。
+
+判断它更接近疏忽而非蓄意锁定，依据是：破坏第三方对优化本身毫无必要。代码库里现成的 `uses_codex_backend()` 信号（模型选单过滤已经在用）加一处 gating，就能让第三方继续走普通路径，优化在自家后端照常生效。故意锁定不需要以"忘记 gating"这种粗糙形式实现。
+
+更准确的描述是：这是一次只为自家闭环设计和验证的协议演进，第三方路径没进它的测试矩阵。对被破坏的一方，疏忽和策略的工程后果没有区别。随着 wire 协议和模型训练格式的耦合越来越深，这类断裂大概率还会再出现，接第三方 provider 时值得当作常态风险对待。
+
+---
+
+## 六、解决方案
 
 根因是一个布尔标志，所以我先想到的都是"就地关掉它"，最后才回退版本。三种方案依次是：
 
@@ -188,7 +228,7 @@ Codex 的内置模型目录（`models.json`）把 `gpt-5.6-sol` / `gpt-5.6-terra
 
 ---
 
-## 六、遗留问题与说明
+## 七、遗留问题与说明
 
 - **模型选单里没有 5.6**：0.143 早于 5.6 发布，内置候选列表不列出，但 `--model gpt-5.6-sol` 或 config 指定**照样可用**——选单只是 UI 候选，不限制实际可用模型。
 
@@ -208,13 +248,15 @@ Codex 的内置模型目录（`models.json`）把 `gpt-5.6-sol` / `gpt-5.6-terra
 
 ---
 
-## 七、根治途径
+## 八、根治途径
 
-等待 Codex 官方修复 **issue #31894**[^iss-31894]——让 `additional_tools` 对自定义 provider 也能正确暴露工具，或在非官方后端回退到顶层 `tools` 字段；Agent Maestro 侧也可增加对 `additional_tools` item 的解析作为补救。修复上线后，删除 shim 恢复走最新 standalone 即可。
+第五节已经说明，responses_lite 是 OpenAI 官方后端专属的内部协议，Codex 却按模型 slug 无条件把它发给了所有 provider。所以根治该落在 **Codex 加一个 provider 门控**：发送前查一下 `uses_codex_backend()`（模型选单过滤已经在用的现成信号），非官方后端就不启用 responses_lite，回退标准的顶层 `tools`。一处修好，所有第三方 provider（Agent Maestro、Azure……）全部受益。相关 issue（#31894[^iss-31894]、#31882[^iss-31882]、#31875[^iss-31875]）均已提交、open 未定案。
+
+反方向让 Agent Maestro 去解析 `additional_tools` 不是好补救：里面还牵涉 `collaboration` 加密命名空间等官方后端专属机制，第三方无法完整还原，本就不该收到这个请求。在官方修复前，回退 0.143 是最省事的绕过；修复上线后，删掉 shim 恢复走最新 standalone 即可。
 
 ---
 
-## 八、几点经验
+## 九、几点经验
 
 1. **别凭架构推断下结论。** 这次三个假设全被实测推翻，靠谱的只有日志、二进制字符串、抓包这类硬证据。
 2. **分清发送端和接收端。** 请求格式变在客户端（Codex），能不能解析看接收端（provider）——两个环节分开看，才不会把"对所有 provider 都变了"说成"只对自定义 provider 变"。
@@ -227,3 +269,4 @@ Codex 的内置模型目录（`models.json`）把 `gpt-5.6-sol` / `gpt-5.6-terra
 [^src-client]: 请求构造逻辑（`AdditionalTools` / `input.splice` / 顶层 `tools = None`）：<https://github.com/openai/codex/blob/main/codex-rs/core/src/client.rs>
 [^src-common]: `tools` 字段带 `skip_serializing_if` 的序列化定义（`codex-api/src/common.rs`）。文件定位见仓库搜索：<https://github.com/search?q=repo%3Aopenai%2Fcodex+skip_serializing_if+tools&type=code>
 [^src-test]: Responses Lite 请求形态的断言测试：<https://github.com/openai/codex/blob/main/codex-rs/core/tests/suite/responses_lite.rs>
+[^src-specplan]: 工具 spec 与 Lite 路径的编排逻辑：<https://github.com/openai/codex/blob/main/codex-rs/core/src/tools/spec_plan.rs>
