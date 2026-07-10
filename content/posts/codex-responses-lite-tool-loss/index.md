@@ -2,8 +2,8 @@
 title: "Codex 0.144 通过第三方 Provider 无法使用 5.6 模型工具的排查记录"
 date: 2026-07-10
 draft: false
-summary: "Codex 升级到 0.144.1 后，经 Agent Maestro 使用 gpt-5.6-sol 时工具全部失效。从五个被实测推翻的假设，到源码级确认的 responses_lite 根因，再到回退 0.143 的完整解决方案。"
-description: "Codex 升级到 0.144.1 后，经 Agent Maestro 使用 gpt-5.6-sol 时工具全部失效。从五个被实测推翻的假设，到源码级确认的 responses_lite 根因，再到回退 0.143 的完整解决方案。"
+summary: "Codex 升级到 0.144.1 后，经 Agent Maestro 使用 gpt-5.6-sol 时工具全部失效。从三个被实测推翻的假设，到源码级确认的 responses_lite 根因，再到回退 0.143 的完整解决方案。"
+description: "Codex 升级到 0.144.1 后，经 Agent Maestro 使用 gpt-5.6-sol 时工具全部失效。从三个被实测推翻的假设，到源码级确认的 responses_lite 根因，再到回退 0.143 的完整解决方案。"
 tags: ["Codex", "OpenAI", "Agent Maestro", "GPT-5.6", "Troubleshooting", "AI Agent"]
 categories: ["AI Agent Engineering"]
 ShowToc: true
@@ -57,23 +57,17 @@ flowchart LR
 
 ---
 
-## 三、排查过程：五个被推翻的假设
+## 三、排查过程：三个被推翻的假设
 
 这次排查绕了不少弯路，几个凭直觉下的判断都被随后的实测推翻，最后靠硬证据（日志、二进制、抓包）才定位到真相。按时间顺序记录如下。
 
-### 假设 1 ❌：Agent Maestro 桥接不支持工具
-
-最初怀疑第三方桥接根本不转发工具定义。
-
-**推翻**：`gpt-5.5` 经同一个 Maestro 工具完全正常。桥接是支持工具的。
-
-### 假设 2 ❌：上游 Copilot 未对 5.6 开放工具能力
+### 假设 1 ❌：上游 Copilot 未对 5.6 开放工具能力
 
 猜测新模型 5.6-sol 在 Copilot 侧尚未开放 tool calling。
 
 **推翻**：Copilot CLI 直接使用 `gpt-5.6-sol`（`settings.json` 中 `"model": "gpt-5.6-sol"`），工具完全正常。上游模型本身支持工具。
 
-### 假设 3 ❌：VS Code LM API 未声明 5.6-sol 的工具能力
+### 假设 2 ❌：VS Code LM API 未声明 5.6-sol 的工具能力
 
 Agent Maestro 透传 VS Code Language Model API 的模型能力。怀疑 LM API 对 5.6-sol 的 `supportsToolCalling` 为 false。
 
@@ -85,17 +79,11 @@ curl -s http://127.0.0.1:23333/api/v1/lm/chatModels
 
 结果 `gpt-5.6-sol` 明确 `"supportsToolCalling": true`，与 `gpt-5.5` 完全一致。能力位没有问题。
 
-### 假设 4 ❌：模型幻觉，以为自己没有工具
+### 假设 3 ❌：模型幻觉，以为自己没有工具
 
 分析失败会话的 rollout 日志，发现整个会话没有一条真实的工具调用记录，一度判断是模型幻觉"我没有工具"。
 
 **推翻**：后续在 Maestro 日志里找到了决定性证据（见第四节），证明工具是被**转发层真实丢弃**的——模型说"没有工具"是**对的**，不是幻觉。
-
-### 假设 5 ❌：这是模型侧行为，回退 Codex 版本无用
-
-因为无法确认 `responses_lite` 是哪个版本引入的，一度认为回退可能无效。
-
-**推翻**：用 0.143 的二进制跑 `gpt-5.6-sol`，工具立即恢复正常（真实执行了 `ls`）。**确证是 Codex 版本引入的问题。**
 
 ---
 
@@ -228,10 +216,9 @@ Codex 的内置模型目录（`models.json`）把 `gpt-5.6-sol` / `gpt-5.6-terra
 
 ## 八、几点经验
 
-1. **别凭架构推断下结论。** 这次五个假设全被实测推翻，靠谱的只有日志、二进制字符串、抓包这类硬证据。
+1. **别凭架构推断下结论。** 这次三个假设全被实测推翻，靠谱的只有日志、二进制字符串、抓包这类硬证据。
 2. **分清发送端和接收端。** 请求格式变在客户端（Codex），能不能解析看接收端（provider）——两个环节分开看，才不会把"对所有 provider 都变了"说成"只对自定义 provider 变"。
 3. **信日志，别信模型自述。** 判断实际用了哪个模型、工具有没有真下发，看 provider 路由日志，模型自己会给出幻觉答案。
-4. **回退是绕过，不是修复。** 恢复可用之后仍要推动上游修，并留一条能快速切回的路。
 
 [^iss-31894]: openai/codex issue #31894 "gpt-5.6 Responses Lite turns do not expose exec/code-mode tools in codex exec"：<https://github.com/openai/codex/issues/31894>
 [^iss-31882]: openai/codex issue #31882 "gpt-5.6-sol/terra/luna hardcode use_responses_lite / multi_agent_version, causing 400s on Azure (and likely any non-ChatGPT-backend) model_provider"：<https://github.com/openai/codex/issues/31882>
