@@ -4,7 +4,7 @@ date: 2026-03-01T10:00:00+08:00
 draft: false
 summary: "Agent 能调工具就有外部副作用，有副作用就需要控制机制。System Prompt 不够——生产环境需要模型侧软控制和框架侧硬控制双层防御。"
 description: "Agent 能调工具就有外部副作用，有副作用就需要控制机制。System Prompt 不够——生产环境需要模型侧软控制和框架侧硬控制双层防御。"
-tags: ["AI Agent", "HITL", "Human-in-the-Loop", "Agent Safety"]
+tags: ["HITL", "Agent Architecture"]
 categories: ["AI Agent Engineering"]
 series: ["AI Agent 的人类控制权"]
 ShowToc: true

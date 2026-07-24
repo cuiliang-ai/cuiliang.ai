@@ -1,4 +1,13 @@
 {{- define "main" }}
+{{- if eq .Type "tags" }}
+    {{- $canonicalTags := site.Params.canonicalTags | default (slice) }}
+    {{- range .Data.Terms.Alphabetical }}
+        {{- $tagSlug := .Name | urlize }}
+        {{- if not (in $canonicalTags $tagSlug) }}
+            {{- warnf "Unknown tag %q. Use one of params.canonicalTags in hugo.yaml." .Name }}
+        {{- end }}
+    {{- end }}
+{{- end }}
 
 {{- if .Title }}
 <header class="page-header">

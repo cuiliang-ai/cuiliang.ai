@@ -5,11 +5,9 @@ draft: false
 summary: "Google Workspace、飞书、钉钉同月开源 CLI。CLI 的回归不是技术倒退，而是软件消费者结构变化的必然——GUI 服务人类，CLI 服务 AI Agent。"
 description: "Google Workspace、飞书、钉钉同月开源 CLI。CLI 的回归不是技术倒退，而是软件消费者结构变化的必然——GUI 服务人类，CLI 服务 AI Agent。"
 tags:
-  - AI Agent
-  - CLI
+  - Code Agent
   - MCP
   - Claude Code
-  - Skill
 categories:
   - AI Agent Engineering
 ShowToc: true

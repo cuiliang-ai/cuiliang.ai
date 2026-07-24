@@ -4,7 +4,7 @@ date: 2026-03-01T14:00:00+08:00
 draft: false
 summary: "Automation Bias 是 HITL 的隐形杀手。五个审批界面设计原则：展示为什么、暴露风险、增加认知摩擦、提供对比基线、支持编辑。"
 description: "Automation Bias 是 HITL 的隐形杀手。五个审批界面设计原则：展示为什么、暴露风险、增加认知摩擦、提供对比基线、支持编辑。"
-tags: ["AI Agent", "HITL", "Automation Bias", "UX Design", "EU AI Act"]
+tags: ["HITL", "Agent UX"]
 categories: ["AI Agent Engineering"]
 series: ["AI Agent 的人类控制权"]
 ShowToc: true

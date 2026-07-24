@@ -4,7 +4,7 @@ date: 2026-01-17
 draft: false
 summary: "从 KV Cache 到 Prompt Cache 的认知跃迁：前缀精确匹配的铁律、Agent 的 I/O 100:1 失衡、以及为什么 Cache-Safe 是 Client 侧工程责任。"
 description: "从 KV Cache 到 Prompt Cache 的认知跃迁：前缀精确匹配的铁律、Agent 的 I/O 100:1 失衡、以及为什么 Cache-Safe 是 Client 侧工程责任。"
-tags: ["Prompt Caching", "KV Cache", "Agent", "LLM", "Cost Optimization"]
+tags: ["Prompt Caching", "KV Cache", "LLM Inference", "Agent Architecture"]
 categories: ["AI Agent Engineering"]
 series: ["Agent 工程师的 Prompt Caching"]
 ShowToc: true

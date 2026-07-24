@@ -5,12 +5,9 @@ draft: false
 summary: "Mixture of Agents（MoA）真正难的不是让多个模型一起回答，而是让它们想完之后，agent 系统里仍然只有一个清晰的执行边界。本文从单模型的盲区出发，借 Hermes 的实现讲清 MoA 如何被封装成一个普通 provider 抽象——三个工程不变量（执行权唯一、会话历史不变、缓存前缀不变）、随迭代轮数线性增长的成本结构，以及五类真正进生产才会暴露的 failure modes。"
 description: "Mixture of Agents（MoA）真正难的不是让多个模型一起回答，而是让它们想完之后，agent 系统里仍然只有一个清晰的执行边界。本文借 Hermes 的实现讲清 MoA 如何被封装成一个普通 provider 抽象，以及三个工程不变量与五类生产 failure modes。"
 tags:
-  - AI Agent
-  - Mixture of Agents
-  - MoA
-  - Hermes
+  - Multi-Agent
+  - Agent Architecture
   - LLM
-  - Agent Engineering
 categories:
   - AI Agent Engineering
 keywords:

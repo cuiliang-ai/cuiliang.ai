@@ -4,7 +4,7 @@ date: 2026-02-27
 draft: false
 summary: "自顶向下拆解推理框架：延迟构成、上下文成本、模型路由、多模态代价、韧性设计——面向 Agent 架构师的推理层指南。"
 description: "自顶向下拆解推理框架：延迟构成、上下文成本、模型路由、多模态代价、韧性设计——面向 Agent 架构师的推理层指南。"
-tags: ["LLM", "Agent", "Inference", "vLLM", "KV Cache", "推理优化"]
+tags: ["LLM", "LLM Inference", "Agent Architecture", "KV Cache"]
 categories: ["AI Agent Engineering"]
 series: ["面向 Agent 开发者的 LLM"]
 ShowToc: true

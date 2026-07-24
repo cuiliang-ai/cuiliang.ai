@@ -6,9 +6,9 @@ summary: "Ultraplan 的 plan-execution 分离不是产品特性，而是 brain-h
 description: "Ultraplan 的 plan-execution 分离不是产品特性，而是 brain-hands 解耦在用户层的映射。从一条命令出发，拆解 Claude Code 云端/本地交互的设计逻辑和 session-harness-sandbox 三层抽象。"
 tags:
   - Claude Code
-  - Ultraplan
   - Agent Architecture
-  - Brain-Hands Decoupling
+  - Agent UX
+  - Agent Runtime
 categories:
   - AI Agent Engineering
 ShowToc: true

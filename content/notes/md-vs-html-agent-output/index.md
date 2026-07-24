@@ -5,11 +5,9 @@ draft: false
 summary: "MD vs HTML 之争被 Thariq 那篇文章点燃，我也想了想。结论很朴素：默认 Markdown，特定场景切 HTML。判断标准只有两个：下游消费者是 Agent 还是人？会不会再改？文章顺带聊了我已经切到 HTML 的 4 个场景、一个双轨做法、以及 Agent 真正打开的新形态——让它顺手把消费内容的容器也做了。"
 description: "MD vs HTML 之争被 Thariq 那篇文章点燃，我也想了想。结论很朴素：默认 Markdown，特定场景切 HTML。判断标准只有两个：下游消费者是 Agent 还是人？会不会再改？文章顺带聊了我已经切到 HTML 的 4 个场景、一个双轨做法、以及 Agent 真正打开的新形态——让它顺手把消费内容的容器也做了。"
 tags:
-  - AI Agent
+  - Code Agent
+  - Agent UX
   - Claude Code
-  - Markdown
-  - HTML
-  - Workflow
 categories:
   - AI Agent Engineering
 ShowToc: true

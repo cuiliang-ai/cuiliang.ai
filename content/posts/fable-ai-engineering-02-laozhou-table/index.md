@@ -5,9 +5,8 @@ draft: false
 summary: "接着木匠铺的寓言，单讲第二层改造那张桌子：context（上下文）不是越多越好。桌子就那么大，新料压旧料、没用的料冲淡要紧的、夹在中间的被滑过、过期的料比空着还坏——这就是 context 会腐烂。真正的功夫不在摆得全，在主动经营。文末照例拆穿故事美化了你哪里。"
 description: "接着木匠铺的寓言，单讲第二层改造那张桌子：context（上下文）不是越多越好。桌子就那么大，新料压旧料、没用的料冲淡要紧的、夹在中间的被滑过、过期的料比空着还坏——这就是 context 会腐烂。真正的功夫不在摆得全，在主动经营。文末照例拆穿故事美化了你哪里。"
 tags:
-  - AI Agent
   - Context Engineering
-  - Loop Engineering
+  - Agent Architecture
 categories:
   - AI Agent Engineering
 keywords:

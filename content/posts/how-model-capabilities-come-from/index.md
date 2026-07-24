@@ -4,7 +4,7 @@ date: 2026-02-26
 draft: false
 summary: "预训练压缩知识、SFT 教会格式、RLHF 对齐偏好、Function Calling 赋予工具能力——面向 Agent 开发者的模型训练全景指南。"
 description: "预训练压缩知识、SFT 教会格式、RLHF 对齐偏好、Function Calling 赋予工具能力——面向 Agent 开发者的模型训练全景指南。"
-tags: ["LLM", "Agent", "预训练", "SFT", "RLHF", "Function Calling", "微调"]
+tags: ["LLM"]
 categories: ["AI Agent Engineering"]
 series: ["面向 Agent 开发者的 LLM"]
 ShowToc: true

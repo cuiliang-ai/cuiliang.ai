@@ -4,7 +4,7 @@ date: 2026-04-21T11:00:00+08:00
 draft: false
 summary: "Service Mode 改造下篇:Channel 推广到 1:N 的 AttachManager、5 层 Resource Cap 的职责切分、错误信封 / observability / CLI≡serve,以及三类我没做的事。"
 description: "ACAgent 从 CLI 到 Service 改造的工程层细节:AttachManager 慢 attacher 驱逐、Cap 哨兵值与 -1 语义、CLI 内部 uvicorn,以及 trade-off 自陈。"
-tags: ["AI Agent", "Architecture", "Service Mode", "Resource Cap", "Observability", "ACAgent"]
+tags: ["Agent Architecture", "Agent Runtime", "Observability", "State Management"]
 categories: ["AI Agent Engineering"]
 series: ["Agent CLI 到 Service 改造复盘"]
 ShowToc: true

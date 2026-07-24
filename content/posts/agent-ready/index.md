@@ -4,7 +4,7 @@ date: 2026-03-09
 draft: false
 summary: "有 API 不等于 Agent Ready。从可发现性、交互模式、状态管理、权限模型、容错边界五个维度，拆解产品怎么做才算真正 For Agent。"
 description: "有 API 不等于 Agent Ready。从可发现性、交互模式、状态管理、权限模型、容错边界五个维度，拆解产品怎么做才算真正 For Agent。"
-tags: ["AI Agent", "MCP", "A2A", "Agent Ready", "API Design"]
+tags: ["Agent Architecture", "MCP", "Multi-Agent"]
 categories: ["AI Agent Engineering"]
 ShowToc: true
 TocOpen: true

@@ -6,7 +6,6 @@ summary: "从 Anthropic 三份最新材料中提炼四条 Agent 控制原则：�
 description: "从 Anthropic 三份最新材料中提炼四条 Agent 控制原则：上下文精简、阻止不等于终止、执行与评估分离、防御聚焦实际犯错点。每条原则都有交叉验证和实践启示。"
 tags:
   - Harness Engineering
-  - AI Agent
   - Claude Code
   - Context Engineering
 categories:

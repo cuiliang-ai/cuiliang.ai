@@ -4,10 +4,8 @@ description: "接着木匠铺的寓言，单讲出口那把卡尺：Verifier（�
 date: 2026-07-03
 draft: false
 tags:
-  - AI Agent
-  - Verifier
   - Evaluation
-  - Loop Engineering
+  - Agent Architecture
 categories:
   - AI Agent Engineering
 keywords:

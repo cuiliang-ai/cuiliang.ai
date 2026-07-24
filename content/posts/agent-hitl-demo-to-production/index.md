@@ -4,7 +4,7 @@ date: 2026-03-01T13:00:00+08:00
 draft: false
 summary: "有状态 Agent vs 无状态 Web 的结构性矛盾，Checkpoint 的四层状态，异步审批的 12 步流程，状态膨胀治理，滑动自主性的工程实现。"
 description: "有状态 Agent vs 无状态 Web 的结构性矛盾，Checkpoint 的四层状态，异步审批的 12 步流程，状态膨胀治理，滑动自主性的工程实现。"
-tags: ["AI Agent", "HITL", "Checkpoint", "State Management", "Production"]
+tags: ["HITL", "State Management", "Agent Architecture"]
 categories: ["AI Agent Engineering"]
 series: ["AI Agent 的人类控制权"]
 ShowToc: true

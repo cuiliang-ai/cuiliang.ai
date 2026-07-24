@@ -4,7 +4,7 @@ date: 2026-02-15
 draft: false
 summary: "从 Tokenization 到自回归生成，用一句「帮我查一下北京明天的天气」走完 LLM 处理全流程。面向 Agent 开发者的灰盒认知指南。"
 description: "从 Tokenization 到自回归生成，用一句「帮我查一下北京明天的天气」走完 LLM 处理全流程。面向 Agent 开发者的灰盒认知指南。"
-tags: ["LLM", "Agent", "Tokenization", "Embedding", "Attention", "RAG"]
+tags: ["LLM", "LLM Inference"]
 categories: ["AI Agent Engineering"]
 series: ["面向 Agent 开发者的 LLM"]
 ShowToc: true

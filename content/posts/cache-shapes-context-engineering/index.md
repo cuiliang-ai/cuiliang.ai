@@ -7,7 +7,6 @@ description: "前缀匹配——Prompt Caching 的一条刚性规则——如何
 tags:
   - Context Engineering
   - Prompt Caching
-  - Agent
   - Claude Code
 categories:
   - AI Agent Engineering

@@ -4,7 +4,7 @@ date: 2026-01-10
 draft: false
 summary: "从 Token、Embedding、Attention 到 Prefill/Decode，一次讲透 KV Cache 的底层原理。面向 Agent 工程师的推理基础指南。"
 description: "从 Token、Embedding、Attention 到 Prefill/Decode，一次讲透 KV Cache 的底层原理。面向 Agent 工程师的推理基础指南。"
-tags: ["Prompt Caching", "KV Cache", "Agent", "LLM", "Transformer"]
+tags: ["Prompt Caching", "KV Cache", "LLM Inference", "LLM"]
 categories: ["AI Agent Engineering"]
 series: ["Agent 工程师的 Prompt Caching"]
 ShowToc: true

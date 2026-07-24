@@ -5,13 +5,10 @@ draft: false
 summary: "把 AI Agent 工程拆成两根轴：构造轴（Prompt→Context→Harness）回答 Agent 行动那一刻手里有什么，反馈环轴（Loop→Eval→AgentOps→Outcome）回答 Agent 行动以后谁来判断、维持和改进它。再用四条反馈路径把它们连成一个可以反向修改自身的闭环。"
 description: "把 AI Agent 工程拆成两根轴：构造轴（Prompt→Context→Harness）回答 Agent 行动那一刻手里有什么，反馈环轴（Loop→Eval→AgentOps→Outcome）回答 Agent 行动以后谁来判断、维持和改进它。再用四条反馈路径把它们连成一个可以反向修改自身的闭环。"
 tags:
-  - Agent Engineering
-  - Prompt Engineering
-  - Context Engineering
+  - Agent Architecture
   - Harness Engineering
-  - Loop Engineering
-  - Eval
-  - AgentOps
+  - Evaluation
+  - Observability
 categories:
   - AI Agent Engineering
 ShowToc: true

@@ -72,6 +72,27 @@ params:
   title: "崔亮 Cui Liang｜AI Agent 工程博客"
   description: "崔亮（Cui Liang）的技术博客，记录 AI Agent 工程、Context Engineering、Multi-Agent Orchestration、Agent Runtime、Claude Code、Codex CLI 与工程实践。"
   keywords: [AI Agent, CUA, MCP, LLM, Computer Use Agent]
+  canonicalTags:
+    - agent-architecture
+    - agent-frameworks
+    - agent-runtime
+    - agent-ux
+    - claude-code
+    - code-agent
+    - codex
+    - context-engineering
+    - evaluation
+    - harness-engineering
+    - hitl
+    - kv-cache
+    - llm
+    - llm-inference
+    - mcp
+    - multi-agent
+    - observability
+    - prompt-caching
+    - software-engineering
+    - state-management
   schema:
     sameAs:
       - "https://github.com/cuiliang-ai"

@@ -4,7 +4,7 @@ date: 2026-01-24
 draft: false
 summary: "六大 Cache 杀手的诊断与对策，以及 Claude Code、Codex、Manus、Gemini CLI 的 Cache-Aware 架构全景扫描。"
 description: "六大 Cache 杀手的诊断与对策，以及 Claude Code、Codex、Manus、Gemini CLI 的 Cache-Aware 架构全景扫描。"
-tags: ["Prompt Caching", "KV Cache", "Agent", "Claude Code", "Manus", "OpenAI Codex"]
+tags: ["Prompt Caching", "Context Engineering", "Claude Code", "Codex"]
 categories: ["AI Agent Engineering"]
 series: ["Agent 工程师的 Prompt Caching"]
 ShowToc: true

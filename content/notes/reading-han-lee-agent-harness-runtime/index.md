@@ -5,11 +5,10 @@ draft: false
 summary: "五一假期读 Han Lee 的 Agent Runtime 长文，顺手写下五点散记：Agent ≠ Model 的工程后果、Agentic Model 这个词为何不准确、Runtime ≠ Sandbox 的边界、Runtime Shift 的五层分类，以及瓶颈正在从 model 转向 harness 和 runtime 留给从业者的窗口期。"
 description: "五一假期读 Han Lee 的 Agent Runtime 长文，顺手写下五点散记：Agent ≠ Model 的工程后果、Agentic Model 这个词为何不准确、Runtime ≠ Sandbox 的边界、Runtime Shift 的五层分类，以及瓶颈正在从 model 转向 harness 和 runtime 留给从业者的窗口期。"
 tags:
-  - AI Agent
   - Agent Runtime
   - Harness Engineering
-  - Sandbox
   - Evaluation
+  - Observability
 categories:
   - AI Agent Engineering
 ShowToc: true

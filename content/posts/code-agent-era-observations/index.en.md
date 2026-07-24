@@ -4,7 +4,7 @@ date: 2026-02-07
 draft: false
 summary: "The asymmetry of experience devaluation, broken career ladders, the new elitism paradox, and a crisis in engineering rigor — observations from team practice."
 description: "The asymmetry of experience devaluation, broken career ladders, the new elitism paradox, and a crisis in engineering rigor — observations from team practice."
-tags: ["Code Agent", "Vibe Coding", "Software Engineering", "AI"]
+tags: ["Code Agent", "Software Engineering"]
 categories: ["AI Agent Engineering"]
 series: ["Bilingual"]
 ShowToc: true

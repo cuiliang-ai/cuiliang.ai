@@ -4,7 +4,7 @@ date: 2026-03-01T12:00:00+08:00
 draft: false
 summary: "用三层模型对 LangGraph、AutoGen、CrewAI、Semantic Kernel、MS Agent Framework、Claude Code 做 HITL 体检。结论：Checkpoint 是分水岭。"
 description: "用三层模型对 LangGraph、AutoGen、CrewAI、Semantic Kernel、MS Agent Framework、Claude Code 做 HITL 体检。结论：Checkpoint 是分水岭。"
-tags: ["AI Agent", "HITL", "LangGraph", "AutoGen", "CrewAI", "Semantic Kernel", "Agent Framework"]
+tags: ["HITL", "Agent Frameworks", "Multi-Agent"]
 categories: ["AI Agent Engineering"]
 series: ["AI Agent 的人类控制权"]
 ShowToc: true

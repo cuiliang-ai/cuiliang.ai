@@ -5,10 +5,10 @@ draft: false
 summary: "读 Anthropic Managed Agents 官方文档和工程博客后的整理笔记：六层架构、Brain/Hands/Session 抽象、端到端调用链路、资源字典和几条设计判断。"
 description: "读 Anthropic Managed Agents 官方文档和工程博客后的整理笔记：六层架构、Brain/Hands/Session 抽象、端到端调用链路、资源字典和几条设计判断。"
 tags:
-  - Agent Engineering
-  - Claude
-  - Managed Agents
-  - Architecture
+  - Agent Frameworks
+  - Agent Architecture
+  - Agent Runtime
+  - State Management
 categories:
   - AI Agent Engineering
 ShowToc: true
@@ -936,7 +936,6 @@ Anthropic 工程博客明确引用了 Sutton 的 Bitter Lesson：**harness 编�
 ---
 
 > 本文基于 Anthropic Managed Agents 平台公开文档梳理，截至 2026 年 5 月。所有判断都是作者基于一线工程经验对文档的解读，不代表 Anthropic 官方观点。
-
 
 
 

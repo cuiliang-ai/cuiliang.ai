@@ -2,7 +2,7 @@
 title: "Claude Managed Agents：模型厂商开始吞噬 Agent 基建"
 date: 2026-04-09
 draft: false
-tags: ["Agent Engineering", "Claude", "Managed Agents", "Architecture"]
+tags: ["Agent Frameworks", "Agent Architecture", "Agent Runtime", "Claude Code"]
 description: "Anthropic 发布 Claude Managed Agents，把 Harness 和 Sandbox 打包进平台。这不只是一个新产品，而是 Agent 基建层的一次结构性重组。"
 ---
 

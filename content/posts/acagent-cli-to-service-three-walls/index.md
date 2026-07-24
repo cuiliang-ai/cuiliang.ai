@@ -4,7 +4,7 @@ date: 2026-04-21T10:00:00+08:00
 draft: false
 summary: "想让自己的 agent 跟上 Claude Code web 端的形态,顺便把 agent 架构从'读过'变成'撞过'。三天改造里的三次认知转变:会话 ≠ 进程、事件流 ≠ 输出、持久化 ≠ 存档。"
 description: "从 CLI 改造 ACAgent 到 Service Mode 的复盘上篇:三堵撞上去才想明白的墙,以及一个反直觉的结论 —— CLI 是 Service 的退化情形。"
-tags: ["AI Agent", "Architecture", "Service Mode", "Event Sourcing", "ACAgent"]
+tags: ["Agent Architecture", "Agent Runtime", "State Management", "Software Engineering"]
 categories: ["AI Agent Engineering"]
 series: ["Agent CLI 到 Service 改造复盘"]
 ShowToc: true

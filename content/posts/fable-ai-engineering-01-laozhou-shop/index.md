@@ -5,11 +5,9 @@ draft: false
 summary: "一个木匠铺学徒的寓言，讲清 AI Agent 工程的四层嵌套：把话说清楚（Prompt）、把料摆到眼前（Context）、给它搭一间合适的屋子（Harness）、让铺子自己一轮一轮转起来（Loop）。优化的单位从一句话，到一桌料，到一间屋，到一套会自运转的系统。文末再拆穿这个故事美化了你哪里——四层之间的墙是虚的，卡尺本身也会骗人。"
 description: "一个木匠铺学徒的寓言，讲清 AI Agent 工程的四层嵌套：把话说清楚（Prompt）、把料摆到眼前（Context）、给它搭一间合适的屋子（Harness）、让铺子自己一轮一轮转起来（Loop）。优化的单位从一句话，到一桌料，到一间屋，到一套会自运转的系统。文末再拆穿这个故事美化了你哪里——四层之间的墙是虚的，卡尺本身也会骗人。"
 tags:
-  - AI Agent
-  - Prompt Engineering
+  - Agent Architecture
   - Context Engineering
   - Harness Engineering
-  - Loop Engineering
 categories:
   - AI Agent Engineering
 series:

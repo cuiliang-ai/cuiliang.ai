@@ -4,7 +4,7 @@ date: 2026-07-10
 draft: false
 summary: "Codex 升级到 0.144.1 后，经 Agent Maestro 使用 gpt-5.6-sol 时工具全部失效。从三个被实测推翻的假设，到源码级确认的 responses_lite 根因，再到回退 0.143 的完整解决方案。"
 description: "Codex 升级到 0.144.1 后，经 Agent Maestro 使用 gpt-5.6-sol 时工具全部失效。从三个被实测推翻的假设，到源码级确认的 responses_lite 根因，再到回退 0.143 的完整解决方案。"
-tags: ["Codex", "OpenAI", "Agent Maestro", "GPT-5.6", "Troubleshooting", "AI Agent"]
+tags: ["Codex", "Code Agent", "Agent Architecture"]
 categories: ["AI Agent Engineering"]
 ShowToc: true
 TocOpen: true

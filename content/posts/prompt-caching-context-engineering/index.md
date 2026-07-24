@@ -4,7 +4,7 @@ date: 2026-01-31
 draft: false
 summary: "Context Rot 的物理现实、三层压缩策略、文件系统作为延展记忆、CLAUDE.md 最佳实践，以及从 Prompt Engineering 到 Context Engineering 的范式转变。"
 description: "Context Rot 的物理现实、三层压缩策略、文件系统作为延展记忆、CLAUDE.md 最佳实践，以及从 Prompt Engineering 到 Context Engineering 的范式转变。"
-tags: ["Prompt Caching", "Context Engineering", "Agent", "LLM", "CLAUDE.md"]
+tags: ["Prompt Caching", "Context Engineering", "Claude Code"]
 categories: ["AI Agent Engineering"]
 series: ["Agent 工程师的 Prompt Caching"]
 ShowToc: true
