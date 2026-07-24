@@ -25,4 +25,4 @@
 - [全部文章归档](https://cuiliang.ai/archives/)
 - [English articles](https://cuiliang.ai/en/posts/code-agent-era-observations/): selected English articles on AI Agent engineering.
 
-Last updated: 2026-06-29
+Last updated: 2026-07-24

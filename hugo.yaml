@@ -30,12 +30,19 @@ languages:
           This section contains selected English articles by Cui Liang. The main CuiLiang.ai blog is primarily published in Chinese.
 
           [中文主站：崔亮 Cui Liang 的 AI Agent 工程博客](https://cuiliang.ai/)
+      socialIcons:
+        - name: rss
+          url: "/en/index.xml"
     menu:
       main:
+        - identifier: search
+          name: Search
+          url: /en/search/
+          weight: 1
         - identifier: series
           name: Series
           url: https://cuiliang.ai/series/
-          weight: 1
+          weight: 2
         - identifier: about
           name: About
           url: https://cuiliang.ai/en/about/
@@ -112,26 +119,30 @@ params:
 
 menu:
   main:
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 1
     - identifier: series
       name: Series
       url: /series/
-      weight: 1
+      weight: 2
     - identifier: books
       name: Books
       url: /books/
-      weight: 2
+      weight: 3
     - identifier: notes
       name: Notes
       url: /notes/
-      weight: 3
+      weight: 4
     - identifier: archives
       name: Archives
       url: /archives/
-      weight: 4
+      weight: 5
     - identifier: about
       name: About
       url: /about/
-      weight: 5
+      weight: 6
 
 markup:
   goldmark:

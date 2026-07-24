@@ -166,4 +166,4 @@ An implicit thread running through all four observations: **every conclusion abo
 
 ---
 
-> 🇨🇳 **中文原文：** [Code Agent 时代的四个非共识观察](/posts/code-agent-era-observations/)
+> 🇨🇳 **中文原文：** [Code Agent 时代的四个非共识观察](https://cuiliang.ai/posts/code-agent-era-observations/)

@@ -59,7 +59,7 @@
   ]
 }
 </script>
-{{- if .IsPage }}
+{{- if and .IsPage (in (slice "posts" "notes") .Section) }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -85,9 +85,8 @@
     {{ (path.Join .RelPermalink .Params.cover.image ) | absURL }},
     {{- end}}
   {{- else }}
-    {{- $images := partial "templates/_funcs/get-page-images" . -}}
-    {{- with index $images 0 -}}
-  "image": {{ .Permalink }},
+    {{- with partial "og-image.html" . -}}
+  "image": {{ . | absURL }},
     {{- end }}
   {{- end -}}
   "datePublished": {{ .PublishDate }},
@@ -111,6 +110,6 @@
   }
 }
 </script>
-{{- end }}{{/* .IsPage end */}}
+{{- end }}{{/* article page end */}}
 
 {{- end -}}

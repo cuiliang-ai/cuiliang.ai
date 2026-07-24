@@ -18,7 +18,8 @@
   <meta property="og:locale" content="{{ . }}">
 {{- end }}
 
-{{- if .IsPage }}
+{{- $isArticle := and .IsPage (in (slice "posts" "notes") .Section) -}}
+{{- if $isArticle }}
   <meta property="og:type" content="article">
   {{- with .Section }}
     <meta property="article:section" content="{{ . }}">
