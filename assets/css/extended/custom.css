@@ -348,3 +348,65 @@ body {
   color: var(--secondary);
   opacity: 0.8;
 }
+
+/* ============================================
+   Reading 页面
+   ============================================ */
+
+.reading-notice {
+  margin-bottom: 1.6em;
+  padding: 1em 1.1em;
+  border-left: 3px solid var(--secondary);
+  border-radius: 0 6px 6px 0;
+  background: var(--code-bg);
+  color: var(--secondary);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.reading-list {
+  display: grid;
+  gap: 1.2em;
+}
+
+.reading-card {
+  padding: 1.35em 1.5em;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--code-bg);
+}
+
+.reading-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45em;
+  color: var(--secondary);
+  font-size: 0.78rem;
+}
+
+.reading-card-title {
+  margin: 0.65em 0 0.15em !important;
+  padding: 0 !important;
+  border: 0 !important;
+  font-size: 1.16rem;
+}
+
+.reading-card-original {
+  margin-bottom: 0.75em !important;
+  color: var(--secondary);
+  font-size: 0.86rem;
+}
+
+.reading-card-note {
+  margin-bottom: 0.9em !important;
+  font-size: 0.94rem;
+}
+
+.reading-source-link {
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.reading-empty {
+  color: var(--secondary);
+}

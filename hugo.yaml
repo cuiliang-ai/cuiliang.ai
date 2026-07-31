@@ -156,14 +156,18 @@ menu:
       name: Notes
       url: /notes/
       weight: 4
+    - identifier: reading
+      name: Reading
+      url: /reading/
+      weight: 5
     - identifier: archives
       name: Archives
       url: /archives/
-      weight: 5
+      weight: 6
     - identifier: about
       name: About
       url: /about/
-      weight: 6
+      weight: 7
 
 markup:
   goldmark:

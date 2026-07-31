@@ -1,0 +1,40 @@
+{{- define "main" }}
+
+<article class="post-single reading-page">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+    {{- with .Description }}
+    <div class="post-description">{{ . }}</div>
+    {{- end }}
+  </header>
+
+  <div class="post-content">
+    <aside class="reading-notice" aria-label="使用说明">
+      这是个人待读清单，仅供自己学习。本站不转载原文或译文；文章版权归原作者所有，请通过原文链接阅读。
+    </aside>
+
+    <div class="reading-list">
+      {{- range .Params.reading }}
+      <article class="reading-card">
+        <div class="reading-card-meta">
+          <span>{{ .source }}</span>
+          <span aria-hidden="true">·</span>
+          <span>{{ .author }}</span>
+          <span aria-hidden="true">·</span>
+          <time datetime="{{ .added }}">加入于 {{ .added }}</time>
+        </div>
+        <h2 class="reading-card-title">{{ .titleZh }}</h2>
+        <p class="reading-card-original">{{ .title }}</p>
+        <p class="reading-card-note">{{ .note }}</p>
+        <a class="reading-source-link" href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+          阅读作者原文 <span aria-hidden="true">↗</span>
+        </a>
+      </article>
+      {{- else }}
+      <p class="reading-empty">待读清单为空。</p>
+      {{- end }}
+    </div>
+  </div>
+</article>
+
+{{- end }}
