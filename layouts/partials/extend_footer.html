@@ -1,20 +1,26 @@
-{{- /* Busuanzi counters - only on article single pages */ -}}
+{{- /* Busuanzi counters - only on pages with a post metadata container */ -}}
 <script>
 (function() {
   var postMeta = document.querySelector('.post-single .post-meta');
   if (!postMeta) return;
-  // Page PV (views for this page)
-  var pvSpan = document.createElement('span');
-  pvSpan.id = 'busuanzi_container_page_pv';
-  pvSpan.style.display = 'none';
-  pvSpan.innerHTML = '&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span> views';
-  postMeta.appendChild(pvSpan);
-  // Site UV (unique visitors across site)
-  var uvSpan = document.createElement('span');
-  uvSpan.id = 'busuanzi_container_site_uv';
-  uvSpan.style.display = 'none';
-  uvSpan.innerHTML = '&nbsp;·&nbsp;<span id="busuanzi_value_site_uv"></span> visitors';
-  postMeta.appendChild(uvSpan);
+
+  function appendCounter(id, valueId, label) {
+    if (document.getElementById(id)) return;
+
+    var counter = document.createElement('span');
+    counter.id = id;
+    counter.style.display = 'none';
+    counter.innerHTML = '&nbsp;·&nbsp;<span id="' + valueId + '"></span> ' + label;
+    postMeta.appendChild(counter);
+  }
+
+  appendCounter('busuanzi_container_page_pv', 'busuanzi_value_page_pv', 'views');
+  appendCounter('busuanzi_container_site_uv', 'busuanzi_value_site_uv', 'visitors');
+
+  var script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
+  document.head.appendChild(script);
 })();
 </script>
 
