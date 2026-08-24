@@ -1,5 +1,5 @@
 ---
-title: "自研 Agent Harness 之前，先想清楚它会怎么死"
+title: "在 Agent Harness 里，重新遇见分布式系统"
 date: 2026-08-24
 draft: false
 summary: "长时运行的 Agent Harness 会死在进程崩溃、状态混写、并发竞态和账目失真四个位置。本文借 pi Harness V2 拆解对应的架构与测试方法。"
