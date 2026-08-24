@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#56708f"/>
+    </marker>
+    <style>
+      text { font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif; fill: #162033; }
+      .title { font-size: 50px; font-weight: 500; }
+      .subtitle { font-size: 23px; fill: #667085; }
+      .label { font-size: 25px; font-weight: 500; }
+      .small { font-size: 20px; fill: #667085; }
+      .micro { font-size: 17px; fill: #667085; }
+      .node { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2; }
+      .tree { fill: #eaf2ff; stroke: #2563eb; stroke-width: 3; }
+      .record { fill: #eef8f5; stroke: #15816f; stroke-width: 2.5; }
+      .config { fill: #f2efff; stroke: #7a5af8; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="#f7f9fc"/>
+  <text x="85" y="92" class="title">同一件事，两种状态：分支语义与执行现场</text>
+  <text x="85" y="136" class="subtitle">Conversation Tree 决定未来继承什么；Operation Records 决定当前运行如何恢复</text>
+
+  <rect x="70" y="175" width="1060" height="310" rx="26" fill="#ffffff" stroke="#b9cceb" stroke-width="2"/>
+  <text x="105" y="224" class="label">对话树（Conversation Tree）</text>
+  <text x="455" y="224" class="small">分支位置绑定的语义事实 · Fork 时继承</text>
+
+  <line x1="170" y1="325" x2="915" y2="325" stroke="#7f98b8" stroke-width="3"/>
+  <line x1="445" y1="325" x2="565" y2="415" stroke="#7f98b8" stroke-width="3"/>
+
+  <circle cx="170" cy="325" r="42" class="tree"/>
+  <text x="170" y="319" text-anchor="middle" font-size="19" font-weight="500">用户</text>
+  <text x="170" y="343" text-anchor="middle" class="micro">请求</text>
+
+  <circle cx="445" cy="325" r="42" class="config"/>
+  <text x="445" y="319" text-anchor="middle" font-size="18" font-weight="500">模型</text>
+  <text x="445" y="343" text-anchor="middle" class="micro">配置</text>
+
+  <circle cx="690" cy="325" r="42" class="tree"/>
+  <text x="690" y="319" text-anchor="middle" font-size="18" font-weight="500">工具</text>
+  <text x="690" y="343" text-anchor="middle" class="micro">调用</text>
+
+  <circle cx="915" cy="325" r="42" class="tree"/>
+  <text x="915" y="319" text-anchor="middle" font-size="18" font-weight="500">工具</text>
+  <text x="915" y="343" text-anchor="middle" class="micro">结果</text>
+
+  <circle cx="565" cy="415" r="38" class="tree"/>
+  <text x="565" y="410" text-anchor="middle" font-size="17" font-weight="500">新分支</text>
+  <text x="565" y="432" text-anchor="middle" class="micro">继承配置</text>
+
+  <rect x="1160" y="175" width="370" height="310" rx="26" class="node"/>
+  <text x="1200" y="224" class="label">谁读取它？</text>
+  <circle cx="1210" cy="282" r="7" fill="#2563eb"/>
+  <text x="1232" y="289" font-size="21">上下文构建器</text>
+  <circle cx="1210" cy="340" r="7" fill="#2563eb"/>
+  <text x="1232" y="347" font-size="21">分支与 Fork</text>
+  <circle cx="1210" cy="398" r="7" fill="#2563eb"/>
+  <text x="1232" y="405" font-size="21">未来模型请求</text>
+  <text x="1200" y="450" class="small">删除其中一项，可能改变</text>
+  <text x="1200" y="476" class="small">未来应该看到或继承的内容。</text>
+
+  <rect x="70" y="525" width="1060" height="285" rx="26" fill="#ffffff" stroke="#9bc8bd" stroke-width="2"/>
+  <text x="105" y="575" class="label">操作记录（Operation Records）</text>
+  <text x="495" y="575" class="small">一次运行的调度与恢复现场 · Fork 时不继承</text>
+
+  <text x="110" y="650" class="label">Lane A</text>
+  <line x1="230" y1="642" x2="990" y2="642" stroke="#78aa9f" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="260" y="615" width="135" height="54" rx="16" class="record"/>
+  <text x="328" y="648" text-anchor="middle" font-size="18">Operation Open</text>
+  <rect x="430" y="615" width="150" height="54" rx="16" class="record"/>
+  <text x="505" y="648" text-anchor="middle" font-size="18">Model Intent</text>
+  <rect x="615" y="615" width="140" height="54" rx="16" class="record"/>
+  <text x="685" y="648" text-anchor="middle" font-size="18">Tool Intent</text>
+  <rect x="790" y="615" width="160" height="54" rx="16" class="record"/>
+  <text x="870" y="648" text-anchor="middle" font-size="18">Operation Close</text>
+
+  <text x="110" y="742" class="label">Lane B</text>
+  <line x1="230" y1="734" x2="990" y2="734" stroke="#78aa9f" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="315" y="707" width="135" height="54" rx="16" class="record"/>
+  <text x="383" y="740" text-anchor="middle" font-size="18">Operation Open</text>
+  <rect x="500" y="707" width="150" height="54" rx="16" class="record"/>
+  <text x="575" y="740" text-anchor="middle" font-size="18">Pending Input</text>
+  <rect x="700" y="707" width="160" height="54" rx="16" class="record"/>
+  <text x="780" y="740" text-anchor="middle" font-size="18">Operation Close</text>
+
+  <path d="M690 368 C690 455 685 515 685 603" fill="none" stroke="#7a5af8" stroke-width="2.5" stroke-dasharray="8 7" marker-end="url(#arrow)"/>
+  <text x="713" y="500" class="micro">同一工具调用的执行现场</text>
+
+  <rect x="1160" y="525" width="370" height="285" rx="26" class="node"/>
+  <text x="1200" y="575" class="label">谁读取它？</text>
+  <circle cx="1210" cy="632" r="7" fill="#15816f"/>
+  <text x="1232" y="639" font-size="21">调度器</text>
+  <circle cx="1210" cy="690" r="7" fill="#15816f"/>
+  <text x="1232" y="697" font-size="21">恢复归约器</text>
+  <circle cx="1210" cy="748" r="7" fill="#15816f"/>
+  <text x="1232" y="755" font-size="21">审计与诊断</text>
+  <text x="1200" y="780" class="small">删除后会失去执行进度，</text>
+  <text x="1200" y="806" class="small">但不应删除已确认的对话事实。</text>
+
+  <rect x="70" y="835" width="1460" height="44" rx="16" fill="#eaf2ff"/>
+  <text x="800" y="865" text-anchor="middle" font-size="20" font-weight="500">判断公式：未来分支要继承 → Tree；只服务本次运行与恢复 → Records；两者都有 → 分开记录。</text>
+</svg>

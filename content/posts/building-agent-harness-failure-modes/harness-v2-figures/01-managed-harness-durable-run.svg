@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#56708f"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+    <style>
+      text { font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif; fill: #162033; }
+      .title { font-size: 54px; font-weight: 500; }
+      .subtitle { font-size: 24px; fill: #667085; }
+      .label { font-size: 28px; font-weight: 500; }
+      .small { font-size: 21px; fill: #667085; }
+      .micro { font-size: 18px; fill: #667085; }
+      .node { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2; }
+      .blue { fill: #eaf2ff; stroke: #2563eb; stroke-width: 3; }
+      .store { fill: #eef8f5; stroke: #15816f; stroke-width: 3; }
+      .ghost { fill: #f8fafc; stroke: #a8b3c2; stroke-width: 2; stroke-dasharray: 10 8; }
+      .accent { fill: #fff2ed; stroke: #e05a3f; stroke-width: 2; }
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="#f7f9fc"/>
+  <text x="100" y="105" class="title">Worker 可以死，Run 必须继续</text>
+  <text x="100" y="152" class="subtitle">Managed Harness：把易失的计算进程与持久的运行事实分开</text>
+
+  <rect x="95" y="330" width="250" height="150" rx="22" class="node"/>
+  <circle cx="150" cy="382" r="20" fill="#dbe7f5"/>
+  <path d="M140 382h20M150 372v20" stroke="#56708f" stroke-width="3" stroke-linecap="round"/>
+  <text x="190" y="385" class="label">输入与调度</text>
+  <text x="190" y="426" class="small">Queue / Scheduler</text>
+
+  <line x1="345" y1="405" x2="465" y2="405" stroke="#56708f" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <rect x="485" y="292" width="330" height="225" rx="26" class="blue"/>
+  <rect x="520" y="322" width="126" height="34" rx="17" fill="#2563eb"/>
+  <text x="583" y="346" text-anchor="middle" font-size="17" fill="#ffffff">EPHEMERAL</text>
+  <text x="650" y="410" text-anchor="middle" class="label">Harness Worker B</text>
+  <text x="650" y="452" text-anchor="middle" class="small">加载状态 · 推进一步 · 写回</text>
+  <text x="650" y="487" text-anchor="middle" class="micro">实例无状态，可随时替换</text>
+
+  <rect x="485" y="198" width="330" height="66" rx="18" class="ghost"/>
+  <text x="635" y="240" text-anchor="middle" class="small">Harness Worker A</text>
+  <circle cx="780" cy="231" r="18" fill="#fff2ed" stroke="#e05a3f" stroke-width="2"/>
+  <path d="M771 222l18 18M789 222l-18 18" stroke="#e05a3f" stroke-width="3" stroke-linecap="round"/>
+  <path d="M650 266 C650 278 650 280 650 290" stroke="#e05a3f" stroke-width="2.5" stroke-dasharray="7 7" marker-end="url(#arrow)" fill="none"/>
+  <text x="836" y="237" class="micro">死亡 / 被回收</text>
+
+  <line x1="815" y1="405" x2="925" y2="405" stroke="#2563eb" stroke-width="3" marker-start="url(#arrow-blue)" marker-end="url(#arrow-blue)"/>
+  <text x="870" y="383" text-anchor="middle" class="micro">读取 / 写回</text>
+
+  <rect x="945" y="228" width="535" height="355" rx="28" class="store"/>
+  <text x="1000" y="286" class="label">持久化 Run 状态</text>
+  <text x="1000" y="322" class="small">Durable State Store</text>
+  <rect x="995" y="354" width="205" height="72" rx="16" fill="#ffffff" stroke="#9bc8bd" stroke-width="2"/>
+  <text x="1098" y="385" text-anchor="middle" font-size="22" font-weight="500">对话树</text>
+  <text x="1098" y="412" text-anchor="middle" class="micro">Conversation Tree</text>
+  <rect x="1225" y="354" width="205" height="72" rx="16" fill="#ffffff" stroke="#9bc8bd" stroke-width="2"/>
+  <text x="1328" y="385" text-anchor="middle" font-size="22" font-weight="500">操作记录</text>
+  <text x="1328" y="412" text-anchor="middle" class="micro">Operation Records</text>
+  <rect x="995" y="452" width="205" height="72" rx="16" fill="#ffffff" stroke="#9bc8bd" stroke-width="2"/>
+  <text x="1098" y="483" text-anchor="middle" font-size="22" font-weight="500">挂起输入</text>
+  <text x="1098" y="510" text-anchor="middle" class="micro">Pending Inputs</text>
+  <rect x="1225" y="452" width="205" height="72" rx="16" fill="#ffffff" stroke="#9bc8bd" stroke-width="2"/>
+  <text x="1328" y="483" text-anchor="middle" font-size="22" font-weight="500">用量账本</text>
+  <text x="1328" y="510" text-anchor="middle" class="micro">Usage Ledger</text>
+
+  <rect x="945" y="640" width="535" height="112" rx="22" class="node"/>
+  <text x="1000" y="684" class="label">模型与外部工具</text>
+  <text x="1000" y="724" class="small">LLM Provider · Email · Database · API</text>
+  <line x1="1213" y1="583" x2="1213" y2="635" stroke="#56708f" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <rect x="95" y="660" width="720" height="92" rx="20" class="accent"/>
+  <text x="130" y="703" font-size="25" font-weight="500">核心边界</text>
+  <text x="270" y="703" font-size="24">进程只是可替换的计算单元；Run 的事实留在外部持久层</text>
+  <text x="130" y="735" class="micro">新 Worker 接管的是同一个 Run，而不是重新开始一个新任务。</text>
+</svg>
